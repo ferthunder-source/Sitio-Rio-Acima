@@ -541,7 +541,7 @@ body.is-scrolled .audio-toggle{
 .whatsapp-fab:focus-visible .whatsapp-fab__label{opacity:1;transform:none}
 
 /* ============================================================
-   7. HERO — céu azul, nuvens, pássaros, montanhas, árvores
+   7. HERO — compactado para caber tudo em 100svh
    ============================================================ */
 .hero{
   position:relative;
@@ -550,6 +550,7 @@ body.is-scrolled .audio-toggle{
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:flex-start;
   overflow:hidden;
   background:linear-gradient(180deg,
     #2D6BA8 0%,
@@ -560,8 +561,9 @@ body.is-scrolled .audio-toggle{
     #E3F1F6 100%);
   color:#fff;
   text-align:center;
-  padding-top:calc(var(--header-h) + 1rem);
-  padding-bottom:clamp(6rem, 14vh, 11rem);
+  padding-top:calc(var(--header-h) + .5rem);
+  padding-bottom:clamp(3rem, 8vh, 6rem);
+  gap:clamp(.75rem, 1.6vh, 1.5rem);
 }
 
 .hero__sun{
@@ -668,12 +670,13 @@ body.is-scrolled .audio-toggle{
 }
 
 /* ============================================================
-   7b. BANNERS PROMOCIONAIS — carrossel no topo do hero
+   7b. BANNERS PROMOCIONAIS — altura reduzida para não ultrapassar
    ============================================================ */
 .hero__banners{
   position:relative;
-  width:min(1100px, calc(100% - 2rem));
-  height:clamp(200px, 30vh, 380px);
+  width:min(1000px, calc(100% - 2rem));
+  height:clamp(150px, 22vh, 260px);
+  max-height:30vh;
   border-radius:var(--raio);
   overflow:hidden;
   flex-shrink:0;
@@ -738,8 +741,8 @@ body.is-scrolled .audio-toggle{
   z-index:3;
 }
 .banner__share-btn{
-  width:44px;
-  height:44px;
+  width:42px;
+  height:42px;
   border-radius:50%;
   display:grid;
   place-items:center;
@@ -758,14 +761,14 @@ body.is-scrolled .audio-toggle{
 .banner__share-btn--whatsapp:hover{background:#25D366}
 .banner__share-btn--facebook:hover{background:#1877F2}
 .banner__share-btn--instagram:hover{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4)}
-.banner__share-btn svg{width:22px;height:22px;fill:currentColor}
+.banner__share-btn svg{width:20px;height:20px;fill:currentColor}
 .banner__nav{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   z-index:4;
-  width:44px;
-  height:44px;
+  width:40px;
+  height:40px;
   border-radius:50%;
   display:grid;
   place-items:center;
@@ -774,7 +777,7 @@ body.is-scrolled .audio-toggle{
   border:1.5px solid rgba(255,255,255,.35);
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
-  font-size:1.6rem;
+  font-size:1.5rem;
   font-weight:700;
   line-height:1;
   padding-bottom:4px;
@@ -785,8 +788,8 @@ body.is-scrolled .audio-toggle{
   border-color:#fff;
   transform:translateY(-50%) scale(1.08);
 }
-.banner__nav--prev{left:.85rem}
-.banner__nav--next{right:.85rem}
+.banner__nav--prev{left:.75rem}
+.banner__nav--next{right:.75rem}
 .banner__dots{
   position:absolute;
   bottom:1rem;
@@ -795,7 +798,7 @@ body.is-scrolled .audio-toggle{
   align-items:center;
   gap:.45rem;
   z-index:4;
-  padding:.4rem .7rem;
+  padding:.35rem .6rem;
   background:rgba(15,30,22,.5);
   border-radius:999px;
   backdrop-filter:blur(8px);
@@ -803,8 +806,8 @@ body.is-scrolled .audio-toggle{
   border:1px solid rgba(255,255,255,.15);
 }
 .banner__dot{
-  width:9px;
-  height:9px;
+  width:8px;
+  height:8px;
   border-radius:50%;
   background:rgba(255,255,255,.5);
   transition:background .3s ease, width .35s cubic-bezier(.34,1.4,.64,1);
@@ -813,33 +816,33 @@ body.is-scrolled .audio-toggle{
 .banner__dot:hover{background:rgba(255,255,255,.85)}
 .banner__dot.is-active{
   background:#fff;
-  width:26px;
+  width:24px;
   border-radius:6px;
 }
 
-/* Conteúdo do hero */
+/* Conteúdo do hero — compactado */
 .hero__content{
   position:relative;
   z-index:6;
   max-width:840px;
-  padding:2rem 1.35rem;
+  padding:1rem 1.35rem;
   margin-block:auto;
   animation:fadeUp 1s ease both;
 }
 .hero__content::before{
   content:"";
   position:absolute;
-  inset:-20px -60px;
+  inset:-10px -50px;
   background:radial-gradient(ellipse at center, rgba(10,30,50,.42) 0%, rgba(10,30,50,.20) 45%, transparent 72%);
   z-index:-1;
   pointer-events:none;
   border-radius:60px;
 }
 .hero h1{
-  font-size:clamp(2.2rem, 7vw, 4.7rem);
+  font-size:clamp(1.7rem, 5vw, 3.4rem);
   color:#fff;
-  line-height:1.06;
-  margin-bottom:1.3rem;
+  line-height:1.08;
+  margin-bottom:1rem;
   text-shadow:0 4px 30px rgba(0,20,40,.6), 0 2px 10px rgba(0,20,40,.45);
 }
 .hero h1 em{
@@ -848,16 +851,17 @@ body.is-scrolled .audio-toggle{
   text-shadow:0 2px 24px rgba(255,107,122,.55), 0 4px 30px rgba(0,20,40,.5);
 }
 .hero__lead{
-  font-size:clamp(.98rem, 1.9vw, 1.18rem);
+  font-size:clamp(.92rem, 1.7vw, 1.05rem);
   font-weight:500;
-  line-height:1.8;
+  line-height:1.7;
   color:rgba(255,255,255,.97);
-  max-width:620px;
+  max-width:580px;
   margin-inline:auto;
-  margin-bottom:2.4rem;
+  margin-bottom:1.5rem;
   text-shadow:0 2px 14px rgba(0,20,40,.55);
 }
-.hero__actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.hero__actions .btn{padding:.8rem 1.5rem;font-size:.9rem}
 
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(26px)}
@@ -1493,7 +1497,7 @@ body.is-scrolled .audio-toggle{
   .hero__sun{width:160px;height:160px;top:40%;right:10%}
 
   .trees-row{height:270px}
-  .hero{padding-bottom:clamp(5rem, 12vh, 9rem)}
+  .hero{padding-bottom:clamp(3rem, 8vh, 6rem)}
 }
 
 @media (max-width:760px){
@@ -1507,17 +1511,24 @@ body.is-scrolled .audio-toggle{
   .trees-row{height:230px}
 
   .hero__banners{
-    height:clamp(180px, 26vh, 280px);
+    height:clamp(130px, 20vh, 200px);
+    max-height:24vh;
     border-radius:16px;
   }
-  .banner__share-btn{width:38px;height:38px}
-  .banner__share-btn svg{width:19px;height:19px}
-  .banner__nav{width:38px;height:38px;font-size:1.3rem}
+  .banner__share-btn{width:36px;height:36px}
+  .banner__share-btn svg{width:17px;height:17px}
+  .banner__nav{width:36px;height:36px;font-size:1.2rem}
   .banner__nav--prev{left:.5rem}
   .banner__nav--next{right:.5rem}
-  .banner__dots{padding:.3rem .55rem;gap:.35rem}
+  .banner__dots{padding:.3rem .55rem;gap:.35rem;bottom:.75rem;left:.75rem}
   .banner__dot{width:7px;height:7px}
   .banner__dot.is-active{width:20px}
+  .banner__share{right:.75rem;bottom:.75rem}
+
+  .hero h1{font-size:clamp(1.5rem, 6vw, 2.3rem)}
+  .hero__lead{font-size:.9rem;margin-bottom:1.2rem}
+  .hero__actions{gap:.6rem}
+  .hero__actions .btn{padding:.7rem 1.2rem;font-size:.85rem}
 
   .galeria{grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:.7rem}
   .galeria__item{aspect-ratio:1}
@@ -1532,13 +1543,14 @@ body.is-scrolled .audio-toggle{
 }
 
 @media (max-width:480px){
-  .hero h1{font-size:clamp(1.9rem, 9vw, 2.6rem)}
-  .hero__lead{font-size:.95rem}
+  .hero h1{font-size:clamp(1.35rem, 6.5vw, 1.9rem)}
+  .hero__lead{font-size:.85rem;line-height:1.6}
   .trees-row{height:200px}
   .destaques__card{padding:1.1rem .8rem}
   .destaque__icon{font-size:1.4rem}
   .destaque__title{font-size:.88rem}
   .destaque__text{font-size:.66rem}
+  .hero__banners{height:clamp(110px, 18vh, 170px);max-height:22vh}
 }
 
 @media (max-width:420px){
@@ -1627,7 +1639,7 @@ body.is-scrolled .audio-toggle{
 <main>
 
   <!-- ============================================================
-       HERO — carrossel de banners no topo + cenário natural
+       HERO — carrossel de banners compacto + cenário natural
        ============================================================ -->
   <section class="hero" id="inicio">
 
