@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sítio Rio Acima — Guaratinguetá/SP | Eventos, Lazer e Hospedagem</title>
 <meta name="description" content="Sítio Rio Acima, em Guaratinguetá/SP: piscina com área infantil, jacuzzi, campo, espaço gourmet, salão de festas e hospedagem. O cenário perfeito para celebrar, relaxar e criar memórias inesquecíveis aos pés da Serra da Mantiqueira.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -298,14 +298,21 @@ h1,h2,h3,h4{
 }
 .logo{display:flex;align-items:center;gap:.7rem;line-height:1.1}
 .logo__mark{
-  width:44px;height:44px;
+  width:48px;height:48px;
+  padding:4px;
   flex-shrink:0;
   display:grid;place-items:center;
   border-radius:50%;
   background:linear-gradient(150deg, var(--verde-500), var(--verde-700));
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.22), 0 8px 18px -10px rgba(0,0,0,.5);
-  font-size:1.15rem;
   transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.logo__img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  border-radius:50%;
 }
 .logo:hover .logo__mark{transform:rotate(-10deg) scale(1.06)}
 .logo__text{display:flex;flex-direction:column}
@@ -1577,7 +1584,9 @@ body.is-scrolled .audio-toggle{
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="#inicio" class="logo" aria-label="Sítio Rio Acima — página inicial">
-      <span class="logo__mark" aria-hidden="true">🌿</span>
+      <span class="logo__mark" aria-hidden="true">
+        <img class="logo__img" src="img/logo.png" alt="" loading="eager">
+      </span>
       <span class="logo__text">
         <span class="logo__title">Sítio Rio Acima</span>
         <span class="logo__sub">Guaratinguetá · SP</span>
@@ -2396,7 +2405,9 @@ body.is-scrolled .audio-toggle{
     <div class="footer__grid">
       <div class="footer__sobre">
         <a href="#inicio" class="logo">
-          <span class="logo__mark" aria-hidden="true">🌿</span>
+          <span class="logo__mark" aria-hidden="true">
+            <img class="logo__img" src="img/logo.png" alt="" loading="lazy">
+          </span>
           <span class="logo__text">
             <span class="logo__title">Sítio Rio Acima</span>
             <span class="logo__sub">Guaratinguetá · SP</span>
