@@ -541,7 +541,7 @@ body.is-scrolled .audio-toggle{
 .whatsapp-fab:focus-visible .whatsapp-fab__label{opacity:1;transform:none}
 
 /* ============================================================
-   7. HERO — compactado para caber tudo em 100svh
+   7. HERO — compacto, com banner limitado ao campo
    ============================================================ */
 .hero{
   position:relative;
@@ -670,7 +670,7 @@ body.is-scrolled .audio-toggle{
 }
 
 /* ============================================================
-   7b. BANNERS PROMOCIONAIS — altura reduzida para não ultrapassar
+   7b. BANNERS — imagem contida + transição de slide (→ ←)
    ============================================================ */
 .hero__banners{
   position:relative;
@@ -688,42 +688,53 @@ body.is-scrolled .audio-toggle{
   background:linear-gradient(135deg, #17392C, #0E241A);
   isolation:isolate;
 }
+
+/* Cada banner fica inicialmente fora à direita (invisível).
+   A troca é feita via classes is-active / is-leaving com keyframes. */
 .banner{
   position:absolute;
   inset:0;
   opacity:0;
-  transform:scale(1.08);
-  filter:blur(6px);
-  transition:
-    opacity 1.1s cubic-bezier(.4,0,.2,1),
-    transform 1.4s cubic-bezier(.22,.61,.36,1),
-    filter .9s ease;
   pointer-events:none;
-  will-change:opacity, transform, filter;
+  z-index:1;
+  overflow:hidden;
+  transform:translateX(100%);
   background:linear-gradient(135deg, #2C5C47 0%, #17392C 55%, #0E241A 100%);
 }
 .banner:nth-child(2){background:linear-gradient(135deg, #3C8262 0%, #1F4535 55%, #0E241A 100%)}
 .banner:nth-child(3){background:linear-gradient(135deg, #B4703C 0%, #17392C 55%, #0E241A 100%)}
 .banner:nth-child(4){background:linear-gradient(135deg, #1F4A39 0%, #0E241A 100%)}
+
 .banner.is-active{
   opacity:1;
-  transform:scale(1);
-  filter:blur(0);
   pointer-events:auto;
   z-index:2;
+  animation:bannerSlideIn .9s cubic-bezier(.77,0,.175,1) forwards;
 }
+.banner.is-leaving{
+  opacity:1;
+  pointer-events:none;
+  z-index:1;
+  animation:bannerSlideOut .9s cubic-bezier(.77,0,.175,1) forwards;
+}
+
+@keyframes bannerSlideIn{
+  from{transform:translateX(100%)}
+  to{transform:translateX(0)}
+}
+@keyframes bannerSlideOut{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
+/* Imagem sempre contida dentro do campo — sem cortes, sem zoom */
 .banner__img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
   display:block;
-  transform:scale(1.01);
-  transition:transform 1s ease;
 }
-.banner.is-active .banner__img{
-  transform:scale(1.09);
-  transition:transform 9s ease-out;
-}
+
 .banner::after{
   content:"";
   position:absolute;
@@ -732,6 +743,7 @@ body.is-scrolled .audio-toggle{
   pointer-events:none;
   z-index:1;
 }
+
 .banner__share{
   position:absolute;
   right:1rem;
@@ -762,6 +774,7 @@ body.is-scrolled .audio-toggle{
 .banner__share-btn--facebook:hover{background:#1877F2}
 .banner__share-btn--instagram:hover{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4)}
 .banner__share-btn svg{width:20px;height:20px;fill:currentColor}
+
 .banner__nav{
   position:absolute;
   top:50%;
@@ -790,6 +803,7 @@ body.is-scrolled .audio-toggle{
 }
 .banner__nav--prev{left:.75rem}
 .banner__nav--next{right:.75rem}
+
 .banner__dots{
   position:absolute;
   bottom:1rem;
@@ -820,7 +834,7 @@ body.is-scrolled .audio-toggle{
   border-radius:6px;
 }
 
-/* Conteúdo do hero — compactado */
+/* Conteúdo do hero */
 .hero__content{
   position:relative;
   z-index:6;
@@ -869,7 +883,7 @@ body.is-scrolled .audio-toggle{
 }
 
 /* ============================================================
-   8. FAIXA DE DESTAQUES
+   8. DESTAQUES
    ============================================================ */
 .destaques{
   position:relative;
@@ -1590,9 +1604,7 @@ body.is-scrolled .audio-toggle{
 </button>
 <span class="audio-hint" id="audioHint">Toque para ouvir 🎵</span>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
+<!-- HEADER -->
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="#inicio" class="logo" aria-label="Sítio Rio Acima — página inicial">
@@ -1638,12 +1650,10 @@ body.is-scrolled .audio-toggle{
 
 <main>
 
-  <!-- ============================================================
-       HERO — carrossel de banners compacto + cenário natural
-       ============================================================ -->
+  <!-- HERO -->
   <section class="hero" id="inicio">
 
-    <!-- Carrossel de banners promocionais -->
+    <!-- Carrossel de banners -->
     <div class="hero__banners" id="heroBanners" aria-label="Banners promocionais do Sítio Rio Acima" aria-roledescription="carrossel">
 
       <div class="banner is-active" data-banner="0">
@@ -1991,9 +2001,7 @@ body.is-scrolled .audio-toggle{
     </div>
   </section>
 
-  <!-- ============================================================
-       GALERIA — separada por tema
-       ============================================================ -->
+  <!-- GALERIA -->
   <section class="section section--creme" id="galeria">
     <div class="container">
 
@@ -2522,7 +2530,7 @@ body.is-scrolled .audio-toggle{
     });
   });
 
-  /* Áudio — tema.mp3 (loop + autoplay com fallback) */
+  /* Áudio */
   const audio = document.getElementById('temaAudio');
   const audioToggle = document.getElementById('audioToggle');
   const audioHint = document.getElementById('audioHint');
@@ -2605,7 +2613,7 @@ body.is-scrolled .audio-toggle{
   }
 
   /* ==========================================================
-     BANNERS PROMOCIONAIS — carrossel automático (6s)
+     BANNERS — carrossel 6s com slide da direita para a esquerda
      ========================================================== */
   const bannerWrap = document.getElementById('heroBanners');
   if (bannerWrap) {
@@ -2617,7 +2625,6 @@ body.is-scrolled .audio-toggle{
     let current = 0;
     let timer = null;
 
-    // Preenche links de compartilhamento com a URL atual
     const pageUrl = encodeURIComponent(window.location.href);
     const shareMessage = encodeURIComponent(
       'Olha que lugar incrível! Sítio Rio Acima em Guaratinguetá/SP — ' + window.location.href
@@ -2630,8 +2637,20 @@ body.is-scrolled .audio-toggle{
     });
 
     function show(index) {
+      const oldIndex = current;
       current = (index + banners.length) % banners.length;
-      banners.forEach((b, i) => b.classList.toggle('is-active', i === current));
+
+      if (oldIndex !== current) {
+        // limpa is-leaving de banners antigos
+        banners.forEach((b, i) => {
+          if (i !== oldIndex) b.classList.remove('is-leaving');
+        });
+        const oldBanner = banners[oldIndex];
+        oldBanner.classList.remove('is-active');
+        oldBanner.classList.add('is-leaving');
+        banners[current].classList.add('is-active');
+      }
+
       dots.forEach((d, i) => {
         d.classList.toggle('is-active', i === current);
         d.setAttribute('aria-selected', i === current ? 'true' : 'false');
@@ -2674,7 +2693,7 @@ body.is-scrolled .audio-toggle{
   }
 
   /* ==========================================================
-     LIGHTBOX — galeria
+     LIGHTBOX
      ========================================================== */
   const itens = document.querySelectorAll('.galeria__item');
   const lightbox = document.getElementById('lightbox');
@@ -2737,7 +2756,7 @@ body.is-scrolled .audio-toggle{
   });
 
   /* ==========================================================
-     ÁRVORES — geradas via JS
+     ÁRVORES
      ========================================================== */
   const treesRow = document.getElementById('treesRow');
 
