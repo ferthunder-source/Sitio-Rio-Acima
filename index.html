@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sítio Rio Acima — Guaratinguetá/SP | Eventos, Lazer e Hospedagem</title>
+<meta name="description" content="Sítio Rio Acima, em Guaratinguetá/SP: piscina com área infantil, jacuzzi, campo, espaço gourmet, salão de festas e hospedagem. O cenário perfeito para celebrar, relaxar e criar memórias inesquecíveis aos pés da Serra da Mantiqueira.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1. VARIÁVEIS E RESET
+   ============================================================ */
+:root{
+  --verde-900:#0E241A;
+  --verde-800:#17392C;
+  --verde-700:#1F4A39;
+  --verde-600:#2A6249;
+  --verde-500:#3C8262;
+  --sage:#8FB39B;
+  --sage-claro:#CFE0D3;
+
+  --areia:#F1EBDD;
+  --creme:#FBF8F1;
+  --branco:#FFFFFF;
+  --pedra:#6C7A70;
+  --texto:#22302A;
+
+  --vermelho:#C8202E;
+  --vermelho-escuro:#9B1520;
+  --vermelho-claro:#F2727C;
+  --vermelho-vivo:#FF6B7A;
+  --vermelho-suave:#FBE3E4;
+
+  --terra:#B4703C;
+  --dourado:#E8A33D;
+
+  --sombra-suave:0 10px 30px -18px rgba(14,36,26,.45);
+  --sombra:0 22px 50px -26px rgba(14,36,26,.55);
+  --sombra-vermelha:0 18px 36px -18px rgba(200,32,46,.55);
+
+  --raio:22px;
+  --raio-sm:14px;
+
+  --fonte-titulo:'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --fonte-texto:'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --header-h:78px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--header-h) + 12px);
+  -webkit-text-size-adjust:100%;
+}
+body{
+  font-family:var(--fonte-texto);
+  font-size:1rem;
+  line-height:1.75;
+  color:var(--texto);
+  background:var(--creme);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+h1,h2,h3,h4{
+  font-family:var(--fonte-titulo);
+  font-weight:700;
+  line-height:1.2;
+  color:var(--verde-800);
+  letter-spacing:0;
+}
+
+/* ============================================================
+   2. UTILITÁRIOS
+   ============================================================ */
+.container{
+  width:100%;
+  max-width:1180px;
+  margin-inline:auto;
+  padding-inline:1.35rem;
+}
+.section{padding-block:clamp(4rem, 8vw, 7rem);position:relative}
+.section--areia{background:var(--areia)}
+.section--creme{background:var(--creme)}
+.section--escura{
+  background:var(--verde-800);
+  color:rgba(255,255,255,.86);
+  position:relative;
+  overflow:hidden;
+}
+.section--escura > .container{position:relative;z-index:2}
+.section--escura h2,.section--escura h3{color:#fff}
+
+.section--escura::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background-image:
+    radial-gradient(1.7px 1.7px at 6% 14%, rgba(255,255,255,.85), transparent 60%),
+    radial-gradient(1.3px 1.3px at 18% 34%, rgba(255,240,200,.75), transparent 60%),
+    radial-gradient(1.9px 1.9px at 27% 8%,  rgba(255,255,255,.8),  transparent 60%),
+    radial-gradient(1.2px 1.2px at 38% 26%, rgba(255,255,255,.7),  transparent 60%),
+    radial-gradient(1.6px 1.6px at 49% 12%, rgba(255,240,200,.8), transparent 60%),
+    radial-gradient(1.2px 1.2px at 58% 38%, rgba(255,255,255,.7),  transparent 60%),
+    radial-gradient(1.8px 1.8px at 67% 20%, rgba(255,255,255,.85), transparent 60%),
+    radial-gradient(1.2px 1.2px at 76% 44%, rgba(255,240,200,.7), transparent 60%),
+    radial-gradient(1.5px 1.5px at 84% 16%, rgba(255,255,255,.8),  transparent 60%),
+    radial-gradient(1.3px 1.3px at 93% 32%, rgba(255,255,255,.7),  transparent 60%),
+    radial-gradient(1.4px 1.4px at 12% 62%, rgba(255,255,255,.55), transparent 60%),
+    radial-gradient(1.2px 1.2px at 44% 58%, rgba(255,240,200,.55), transparent 60%),
+    radial-gradient(1.5px 1.5px at 72% 66%, rgba(255,255,255,.6),  transparent 60%),
+    radial-gradient(1.2px 1.2px at 88% 74%, rgba(255,255,255,.5),  transparent 60%);
+  animation:twinkleLayer 7s ease-in-out infinite alternate;
+  opacity:.55;
+}
+@keyframes twinkleLayer{
+  0%{opacity:.28; transform:scale(1)}
+  100%{opacity:.75; transform:scale(1.015)}
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--vermelho);
+  margin-bottom:1rem;
+}
+.eyebrow::before{
+  content:"";
+  width:26px;height:2px;
+  border-radius:2px;
+  background:currentColor;
+  opacity:.85;
+}
+.section--escura .eyebrow{color:var(--vermelho-claro)}
+
+.section-head{max-width:720px;margin-inline:auto;text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-head h2{font-size:clamp(1.9rem, 4vw, 2.9rem);margin-bottom:1rem}
+.section-head p{font-size:1.05rem;color:var(--pedra);font-weight:500}
+.section--escura .section-head p{color:rgba(255,255,255,.72)}
+
+/* Botões */
+.btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  padding:.95rem 1.8rem;
+  border-radius:999px;
+  font-family:var(--fonte-texto);
+  font-size:.94rem;
+  font-weight:800;
+  letter-spacing:.01em;
+  overflow:hidden;
+  transition:transform .3s cubic-bezier(.34,1.4,.64,1), background .3s ease, color .3s ease, box-shadow .3s ease, border-color .3s ease;
+  white-space:nowrap;
+}
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0;left:-120%;
+  width:55%;height:100%;
+  background:linear-gradient(105deg, transparent, rgba(255,255,255,.45), transparent);
+  transform:skewX(-18deg);
+  transition:left .7s ease;
+}
+.btn:hover::after{left:150%}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.btn:active{transform:translateY(-1px) scale(.99)}
+
+.btn--vermelho{
+  background:linear-gradient(150deg, var(--vermelho), var(--vermelho-escuro));
+  color:#fff;
+  box-shadow:var(--sombra-vermelha);
+}
+.btn--vermelho:hover{box-shadow:0 24px 44px -18px rgba(200,32,46,.75)}
+
+.btn--verde{background:var(--verde-600);color:#fff;box-shadow:0 14px 28px -16px rgba(42,98,73,.9)}
+.btn--verde:hover{background:var(--verde-700)}
+
+.btn--outline{
+  border:1.6px solid rgba(255,255,255,.9);
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  color:#fff;
+  text-shadow:0 1px 4px rgba(0,20,40,.35);
+}
+.btn--outline:hover{
+  background:#fff;
+  color:var(--verde-800);
+  text-shadow:none;
+}
+
+/* ============================================================
+   3. FOTO
+   ============================================================ */
+.photo{
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:var(--raio);
+  background:
+    radial-gradient(120% 90% at 18% 8%, rgba(143,179,155,.45), transparent 62%),
+    radial-gradient(110% 85% at 92% 100%, rgba(60,130,98,.50), transparent 62%),
+    linear-gradient(155deg, #2C5C47 0%, #1F4535 55%, #16332A 100%);
+  color:rgba(255,255,255,.82);
+  box-shadow:var(--sombra-suave);
+  transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease;
+}
+.photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 10px, transparent 10px 20px);
+  pointer-events:none;
+}
+.photo__img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
+  opacity:0;
+  transition:opacity .55s ease, transform .8s cubic-bezier(.22,.61,.36,1);
+}
+.photo--loaded .photo__img{opacity:1}
+.photo--loaded .photo__inner{display:none}
+.photo--error .photo__img{display:none}
+.photo__inner{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.65rem;
+  padding:1.5rem;
+  text-align:center;
+  transition:transform .5s cubic-bezier(.22,.61,.36,1);
+}
+.photo__icon{width:34px;height:34px;opacity:.72}
+.photo__label{
+  font-size:.8rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  line-height:1.45;
+  opacity:.94;
+}
+.photo__sub{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+
+/* ============================================================
+   4. HEADER
+   ============================================================ */
+.header{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:120;
+  color:#fff;
+  padding-block:.85rem;
+  transition:background .35s ease, box-shadow .35s ease, padding .35s ease, color .35s ease;
+}
+.header.is-scrolled{
+  background:rgba(251,248,241,.96);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  color:var(--verde-800);
+  box-shadow:0 10px 34px -22px rgba(14,36,26,.7);
+  padding-block:.5rem;
+}
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+}
+@media (min-width:981px){
+  .header__inner{padding-right:5.2rem}
+}
+.logo{display:flex;align-items:center;gap:.7rem;line-height:1.1}
+.logo__mark{
+  width:44px;height:44px;
+  flex-shrink:0;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:linear-gradient(150deg, var(--verde-500), var(--verde-700));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22), 0 8px 18px -10px rgba(0,0,0,.5);
+  font-size:1.15rem;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.logo:hover .logo__mark{transform:rotate(-10deg) scale(1.06)}
+.logo__text{display:flex;flex-direction:column}
+.logo__title{font-family:var(--fonte-titulo);font-size:1.16rem;font-weight:700}
+.logo__sub{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;font-weight:700}
+
+.nav{display:flex;align-items:center;gap:1.9rem}
+.nav__list{display:flex;align-items:center;gap:1.7rem}
+.nav__link{
+  position:relative;
+  font-size:.87rem;
+  font-weight:700;
+  opacity:.9;
+  padding-block:.3rem;
+  transition:opacity .2s ease, color .2s ease;
+}
+.nav__link::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:0;
+  width:100%;height:2px;
+  border-radius:2px;
+  background:var(--vermelho);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.nav__link:hover{opacity:1;color:var(--vermelho)}
+.header.is-scrolled .nav__link:hover{color:var(--vermelho)}
+.nav__link:hover::after{transform:scaleX(1)}
+
+.nav__cta{
+  font-size:.82rem;
+  padding:.72rem 1.4rem;
+  background:linear-gradient(150deg, var(--vermelho), var(--vermelho-escuro));
+  color:#fff;
+  border-radius:999px;
+  font-weight:800;
+  box-shadow:var(--sombra-vermelha);
+  transition:transform .3s cubic-bezier(.34,1.4,.64,1), box-shadow .3s ease;
+}
+.nav__cta:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 20px 34px -16px rgba(200,32,46,.8)}
+
+.nav-toggle{
+  display:none;
+  width:46px;height:46px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.32);
+  place-items:center;
+  transition:background .25s ease, border-color .25s ease, transform .3s ease;
+}
+.header.is-scrolled .nav-toggle{border-color:rgba(23,57,44,.25)}
+.nav-toggle:hover{transform:scale(1.06)}
+.nav-toggle__bars{position:relative;width:20px;height:14px}
+.nav-toggle__bars span{
+  position:absolute;left:0;
+  width:100%;height:2px;
+  background:currentColor;border-radius:2px;
+  transition:transform .3s ease, opacity .25s ease, top .3s ease;
+}
+.nav-toggle__bars span:nth-child(1){top:0}
+.nav-toggle__bars span:nth-child(2){top:6px}
+.nav-toggle__bars span:nth-child(3){top:12px}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(1){top:6px;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(3){top:6px;transform:rotate(-45deg)}
+
+.nav--mobile{
+  position:absolute;
+  top:calc(100% + .5rem);
+  left:1rem;right:1rem;
+  background:var(--verde-800);
+  border-radius:var(--raio);
+  padding:1.25rem;
+  display:none;
+  flex-direction:column;
+  gap:.35rem;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.7);
+  border:1px solid rgba(255,255,255,.08);
+}
+.nav--mobile.is-open{display:flex}
+.nav--mobile a{
+  color:#fff;
+  font-size:.95rem;
+  font-weight:700;
+  padding:.8rem .9rem;
+  border-radius:12px;
+  transition:background .2s ease, color .2s ease;
+}
+.nav--mobile a:hover{background:rgba(255,255,255,.08);color:var(--vermelho-claro)}
+.nav--mobile .nav__cta{margin-top:.5rem;text-align:center;padding:.95rem;border-radius:14px}
+
+/* ============================================================
+   5. BOTÃO DE ÁUDIO
+   ============================================================ */
+.audio-toggle{
+  position:fixed;
+  top:14px;right:14px;
+  z-index:160;
+  width:54px;height:54px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;
+  background:rgba(255,255,255,.18);
+  border:1.6px solid rgba(255,255,255,.55);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 12px 28px -14px rgba(0,0,0,.5);
+  transition:transform .35s cubic-bezier(.34,1.5,.64,1), background .35s ease, border-color .35s ease, box-shadow .35s ease, color .35s ease;
+}
+body.is-scrolled .audio-toggle{
+  background:rgba(23,57,44,.92);
+  border-color:rgba(255,255,255,.22);
+}
+.audio-toggle:hover{transform:translateY(-2px) scale(1.08)}
+.audio-toggle:focus-visible{outline:2px solid var(--vermelho-claro);outline-offset:3px}
+
+.audio-toggle.is-playing{
+  background:linear-gradient(150deg, var(--vermelho), var(--vermelho-escuro));
+  border-color:rgba(255,255,255,.7);
+  animation:audioPulse 2.4s ease-in-out infinite;
+}
+@keyframes audioPulse{
+  0%,100%{box-shadow:0 12px 28px -14px rgba(0,0,0,.6), 0 0 0 0 rgba(200,32,46,.55)}
+  60%{box-shadow:0 12px 28px -14px rgba(0,0,0,.6), 0 0 0 16px rgba(200,32,46,0)}
+}
+.audio-toggle__eq{display:none;align-items:flex-end;gap:3px;height:20px}
+.audio-toggle.is-playing .audio-toggle__eq{display:flex}
+.audio-toggle.is-playing .audio-toggle__muted{display:none}
+.audio-toggle__eq i{
+  display:block;width:3.5px;border-radius:3px;
+  background:currentColor;
+  animation:eqBar 1s ease-in-out infinite;
+}
+.audio-toggle__eq i:nth-child(1){animation-delay:0s}
+.audio-toggle__eq i:nth-child(2){animation-delay:.18s}
+.audio-toggle__eq i:nth-child(3){animation-delay:.36s}
+.audio-toggle__eq i:nth-child(4){animation-delay:.54s}
+@keyframes eqBar{0%,100%{height:6px;opacity:.7}50%{height:20px;opacity:1}}
+.audio-toggle__muted{width:23px;height:23px}
+
+.audio-hint{
+  position:fixed;
+  top:78px;right:14px;
+  z-index:159;
+  background:var(--vermelho);
+  color:#fff;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.05em;
+  padding:.45rem .8rem;
+  border-radius:999px;
+  box-shadow:var(--sombra-vermelha);
+  opacity:0;
+  transform:translateY(-6px);
+  pointer-events:none;
+  transition:opacity .4s ease, transform .4s ease;
+  white-space:nowrap;
+}
+.audio-hint.is-visible{opacity:1;transform:none}
+.audio-hint::after{
+  content:"";
+  position:absolute;
+  top:-5px;right:20px;
+  width:10px;height:10px;
+  background:var(--vermelho);
+  transform:rotate(45deg);
+  border-radius:2px;
+}
+
+/* ============================================================
+   6. WHATSAPP FLUTUANTE
+   ============================================================ */
+.whatsapp-fab{
+  position:fixed;
+  right:20px;bottom:20px;
+  z-index:150;
+  width:66px;height:66px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;
+  background:linear-gradient(150deg,#3DE27A,#128C7E);
+  box-shadow:0 18px 34px -14px rgba(18,140,126,.85), 0 0 0 0 rgba(37,211,102,.45);
+  transition:transform .45s cubic-bezier(.34,1.6,.64,1), box-shadow .45s ease;
+  animation:fabPulse 3.2s ease-in-out infinite;
+}
+.whatsapp-fab:hover{
+  transform:scale(1.12) rotate(8deg);
+  animation-play-state:paused;
+  box-shadow:0 26px 48px -16px rgba(18,140,126,.95);
+}
+.whatsapp-fab:focus-visible{outline:3px solid var(--vermelho-claro);outline-offset:4px}
+.whatsapp-fab svg{width:35px;height:35px;fill:currentColor;filter:drop-shadow(0 2px 4px rgba(0,0,0,.18))}
+@keyframes fabPulse{
+  0%,100%{box-shadow:0 18px 34px -14px rgba(18,140,126,.85), 0 0 0 0 rgba(37,211,102,.45)}
+  55%{box-shadow:0 18px 34px -14px rgba(18,140,126,.85), 0 0 0 16px rgba(37,211,102,0)}
+}
+.whatsapp-fab__ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:2px solid rgba(37,211,102,.6);
+  animation:ringOut 3s ease-out infinite;
+  pointer-events:none;
+}
+.whatsapp-fab__ring:nth-child(2){animation-delay:1.5s}
+@keyframes ringOut{
+  0%{transform:scale(1);opacity:.9}
+  80%,100%{transform:scale(1.95);opacity:0}
+}
+.whatsapp-fab__label{
+  position:absolute;
+  right:calc(100% + 14px);
+  white-space:nowrap;
+  background:var(--verde-800);
+  color:#fff;
+  font-size:.78rem;
+  font-weight:800;
+  padding:.55rem .95rem;
+  border-radius:999px;
+  opacity:0;
+  transform:translateX(10px);
+  transition:opacity .3s ease, transform .3s ease;
+  pointer-events:none;
+  box-shadow:var(--sombra-suave);
+}
+.whatsapp-fab:hover .whatsapp-fab__label,
+.whatsapp-fab:focus-visible .whatsapp-fab__label{opacity:1;transform:none}
+
+/* ============================================================
+   7. HERO — céu azul, nuvens, pássaros, montanhas, árvores
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:linear-gradient(180deg,
+    #2D6BA8 0%,
+    #4C8FC5 22%,
+    #79B2D9 48%,
+    #AAD0E6 72%,
+    #D4E9F2 92%,
+    #E3F1F6 100%);
+  color:#fff;
+  text-align:center;
+  padding-top:calc(var(--header-h) + 2rem);
+  padding-bottom:clamp(6rem, 14vh, 11rem);
+}
+
+.hero__sun{
+  position:absolute;
+  top:10%;right:14%;
+  width:220px;height:220px;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(255,250,225,.95) 0%,
+    rgba(255,235,160,.65) 30%,
+    rgba(255,220,120,.28) 55%,
+    transparent 75%);
+  filter:blur(8px);
+  pointer-events:none;
+  z-index:1;
+  animation:sunGlow 7s ease-in-out infinite alternate;
+}
+@keyframes sunGlow{
+  0%{opacity:.75;transform:scale(1)}
+  100%{opacity:1;transform:scale(1.06)}
+}
+
+.hero__clouds{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:2;
+  overflow:hidden;
+}
+.cloud{
+  position:absolute;
+  filter:blur(.6px);
+  animation-name:driftCloud;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  will-change:transform;
+}
+.cloud svg{display:block;width:100%;height:auto}
+.cloud--1{top:10%;left:-240px;width:200px;animation-duration:48s;animation-delay:0s;opacity:.92}
+.cloud--2{top:22%;left:-240px;width:280px;animation-duration:68s;animation-delay:-16s;opacity:.78}
+.cloud--3{top:6%;left:-240px;width:150px;animation-duration:58s;animation-delay:-32s;opacity:.9}
+.cloud--4{top:34%;left:-240px;width:230px;animation-duration:78s;animation-delay:-44s;opacity:.68}
+.cloud--5{top:42%;left:-240px;width:170px;animation-duration:64s;animation-delay:-8s;opacity:.72}
+@keyframes driftCloud{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(calc(100vw + 280px))}
+}
+
+.hero__mountains{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  width:100%;
+  height:52%;
+  min-height:240px;
+  pointer-events:none;
+  z-index:3;
+}
+
+/* Fauna */
+.hero__fauna{position:absolute;inset:0;pointer-events:none;z-index:5}
+.fauna{position:absolute;filter:drop-shadow(0 8px 14px rgba(0,0,0,.22))}
+.fauna--macaw{width:78px;top:24%;left:8%;animation:floatBird 6.5s ease-in-out infinite}
+.fauna--toucan{width:76px;top:38%;right:9%;animation:floatBird 7.5s ease-in-out infinite reverse}
+.fauna--flock{width:220px;top:14%;left:-240px;opacity:.6;animation:driftAcross 46s linear infinite}
+@keyframes floatBird{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-16px) rotate(3deg)}
+}
+@keyframes driftAcross{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(calc(100vw + 280px))}
+}
+
+/* ÁRVORES — maiores, mais presentes e com movimento */
+.trees-row{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:340px;
+  pointer-events:none;
+  z-index:4;
+}
+.tree{
+  position:absolute;
+  bottom:0;
+  transform-origin:bottom center;
+  animation:treeSway var(--dur, 5s) ease-in-out infinite;
+  animation-delay:var(--del, 0s);
+  will-change:transform;
+}
+.tree svg{display:block;height:100%;width:auto}
+.tree-leaves{
+  transform-box:fill-box;
+  transform-origin:50% 92%;
+  animation:leafSway var(--leaf-dur, 3.4s) ease-in-out infinite;
+  animation-delay:var(--leaf-del, 0s);
+}
+@keyframes treeSway{
+  0%,100%{transform:rotate(-1.4deg)}
+  50%{transform:rotate(1.4deg)}
+}
+@keyframes leafSway{
+  0%,100%{transform:rotate(-2.6deg) scale(1)}
+  50%{transform:rotate(2.6deg) scale(1.02)}
+}
+
+/* Conteúdo do hero */
+.hero__content{
+  position:relative;
+  z-index:6;
+  max-width:840px;
+  padding:2rem 1.35rem;
+  animation:fadeUp 1s ease both;
+}
+.hero__content::before{
+  content:"";
+  position:absolute;
+  inset:-20px -60px;
+  background:radial-gradient(ellipse at center, rgba(10,30,50,.42) 0%, rgba(10,30,50,.20) 45%, transparent 72%);
+  z-index:-1;
+  pointer-events:none;
+  border-radius:60px;
+}
+.hero__badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.5rem 1.15rem;
+  border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.95);
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  font-size:.72rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:1.6rem;
+  color:var(--verde-800);
+  box-shadow:0 6px 20px -6px rgba(0,20,40,.3);
+}
+.hero__badge::before{
+  content:"";
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--vermelho);
+  box-shadow:0 0 10px 2px rgba(200,32,46,.85);
+  animation:badgeDot 2.2s ease-in-out infinite;
+}
+@keyframes badgeDot{0%,100%{opacity:.6;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+
+.hero h1{
+  font-size:clamp(2.2rem, 7vw, 4.7rem);
+  color:#fff;
+  line-height:1.06;
+  margin-bottom:1.3rem;
+  text-shadow:0 4px 30px rgba(0,20,40,.6), 0 2px 10px rgba(0,20,40,.45);
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--vermelho-vivo);
+  text-shadow:0 2px 24px rgba(255,107,122,.55), 0 4px 30px rgba(0,20,40,.5);
+}
+.hero__lead{
+  font-size:clamp(.98rem, 1.9vw, 1.18rem);
+  font-weight:500;
+  line-height:1.8;
+  color:rgba(255,255,255,.97);
+  max-width:620px;
+  margin-inline:auto;
+  margin-bottom:2.4rem;
+  text-shadow:0 2px 14px rgba(0,20,40,.55);
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(26px)}
+  to{opacity:1;transform:none}
+}
+
+/* ============================================================
+   8. FAIXA DE DESTAQUES — agora ABAIXO do cenário (sem sobrepor)
+   ============================================================ */
+.destaques{
+  position:relative;
+  z-index:10;
+  background:var(--creme);
+  padding-block:2.5rem 4rem;
+}
+.destaques__card{
+  background:var(--branco);
+  border-radius:calc(var(--raio) + 6px);
+  box-shadow:var(--sombra);
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:.5rem;
+  padding:1.9rem 1.4rem;
+  border:1px solid rgba(200,32,46,.08);
+}
+.destaque{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:.45rem;
+  padding:.6rem .6rem;
+  position:relative;
+  border-radius:16px;
+  transition:transform .4s cubic-bezier(.34,1.4,.64,1), background .4s ease;
+}
+.destaque + .destaque::before{
+  content:"";
+  position:absolute;
+  left:0;top:14%;
+  height:72%;width:1px;
+  background:linear-gradient(180deg, transparent, rgba(23,57,44,.14), transparent);
+}
+.destaque:hover{transform:translateY(-6px);background:rgba(200,32,46,.05)}
+.destaque:hover .destaque__icon{transform:scale(1.2) rotate(-8deg)}
+.destaque__icon{font-size:1.6rem;line-height:1;transition:transform .45s cubic-bezier(.34,1.6,.64,1)}
+.destaque__title{
+  font-family:var(--fonte-titulo);
+  font-size:1.02rem;
+  font-weight:700;
+  color:var(--verde-800);
+}
+.destaque__text{
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--vermelho);
+  font-weight:800;
+}
+
+/* ============================================================
+   9. SOBRE
+   ============================================================ */
+.sobre__grid{
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:clamp(2rem, 5vw, 4.5rem);
+  align-items:center;
+}
+.sobre__fotos{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:1rem;
+  min-height:460px;
+}
+.sobre__fotos-col{display:grid;grid-template-rows:1fr 1fr;gap:1rem}
+.sobre__fotos .photo{height:100%}
+.sobre__fotos .photo:hover{transform:translateY(-6px) rotate(-.6deg)}
+.sobre__fotos .photo:hover .photo__img{transform:scale(1.06)}
+.sobre h2{font-size:clamp(1.9rem, 3.6vw, 2.75rem);margin-bottom:1.2rem}
+.sobre p{color:var(--pedra);margin-bottom:1.05rem;font-size:1.02rem;font-weight:500}
+.sobre p strong{color:var(--verde-700);font-weight:800}
+.sobre__lista{display:grid;gap:.7rem;margin:1.8rem 0 2.2rem}
+.sobre__lista li{
+  display:flex;
+  align-items:flex-start;
+  gap:.75rem;
+  font-size:.95rem;
+  color:var(--verde-800);
+  font-weight:700;
+}
+.sobre__lista li::before{
+  content:"";
+  flex-shrink:0;
+  width:20px;height:20px;
+  margin-top:.18rem;
+  border-radius:50%;
+  background:var(--vermelho-suave);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C8202E' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size:12px;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* ============================================================
+   10. CARDS ESTRUTURA
+   ============================================================ */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(315px, 1fr));
+  gap:clamp(1.25rem, 2.5vw, 2rem);
+}
+.card{
+  position:relative;
+  background:var(--branco);
+  border-radius:var(--raio);
+  overflow:hidden;
+  box-shadow:var(--sombra-suave);
+  display:flex;
+  flex-direction:column;
+  border:1px solid rgba(23,57,44,.07);
+  transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease, border-color .5s ease;
+}
+.card:hover{
+  transform:translateY(-12px) rotate(-.4deg) scale(1.012);
+  box-shadow:0 40px 70px -34px rgba(14,36,26,.6);
+  border-color:rgba(200,32,46,.28);
+}
+.card .photo{
+  border-radius:0;
+  aspect-ratio:16/10;
+  box-shadow:none;
+  height:auto;
+  transition:filter .6s ease;
+}
+.card:hover .photo{filter:saturate(1.15)}
+.card:hover .photo__img{transform:scale(1.07)}
+.card__body{padding:1.6rem 1.6rem 1.8rem;display:flex;flex-direction:column;flex:1}
+.card__body h3{font-size:1.32rem;margin-bottom:.65rem;transition:color .3s ease}
+.card:hover .card__body h3{color:var(--vermelho)}
+.card__body p{font-size:.94rem;color:var(--pedra);margin-bottom:1.15rem;font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}
+.tags li{
+  font-size:.7rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:var(--vermelho);
+  background:var(--vermelho-suave);
+  border:1px solid rgba(200,32,46,.2);
+  padding:.32rem .72rem;
+  border-radius:999px;
+  transition:transform .3s ease, background .3s ease;
+}
+.card:hover .tags li{background:#FAD5D8}
+.tags li:hover{transform:translateY(-2px) scale(1.05)}
+
+/* ============================================================
+   11. GALERIA
+   ============================================================ */
+.filtros{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.55rem;
+  margin-bottom:2.5rem;
+}
+.filtro{
+  padding:.58rem 1.3rem;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:800;
+  color:var(--verde-700);
+  border:1.5px solid rgba(42,98,73,.22);
+  transition:background .3s ease, color .3s ease, border-color .3s ease, transform .3s cubic-bezier(.34,1.4,.64,1);
+}
+.filtro:hover{background:var(--vermelho-suave);color:var(--vermelho);border-color:rgba(200,32,46,.3);transform:translateY(-2px)}
+.filtro.is-active{
+  background:linear-gradient(150deg, var(--vermelho), var(--vermelho-escuro));
+  color:#fff;
+  border-color:transparent;
+  box-shadow:var(--sombra-vermelha);
+}
+
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(255px, 1fr));
+  gap:1rem;
+}
+.galeria__item{
+  aspect-ratio:4/3;
+  border-radius:var(--raio-sm);
+  cursor:pointer;
+  animation:fadeUp .5s ease both;
+  transition:transform .55s cubic-bezier(.22,.61,.36,1), box-shadow .55s ease;
+}
+.galeria__item.is-hidden{display:none}
+.galeria__item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(160deg, rgba(10,29,21,.15), rgba(200,32,46,.45));
+  opacity:0;
+  transition:opacity .4s ease;
+  z-index:2;
+  pointer-events:none;
+}
+.galeria__item:hover{
+  transform:translateY(-6px) scale(1.035) rotate(.4deg);
+  box-shadow:0 32px 54px -26px rgba(0,0,0,.6);
+  z-index:3;
+}
+.galeria__item:hover::before{opacity:1}
+.galeria__item:hover .photo__img{transform:scale(1.09)}
+.galeria__item .photo__inner{z-index:3;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.galeria__item:hover .photo__inner{transform:scale(1.08)}
+.galeria__zoom{
+  position:absolute;
+  z-index:4;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.95);
+  display:grid;
+  place-items:center;
+  opacity:0;
+  transform:scale(.7);
+  transition:opacity .35s ease, transform .35s cubic-bezier(.34,1.6,.64,1);
+}
+.galeria__zoom svg{width:20px;height:20px;stroke:var(--vermelho);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.galeria__item:hover .galeria__zoom{opacity:1;transform:scale(1)}
+
+/* ============================================================
+   12. EVENTOS
+   ============================================================ */
+.eventos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(285px, 1fr));
+  gap:1.25rem;
+}
+.evento{
+  position:relative;
+  padding:2rem 1.7rem;
+  border-radius:var(--raio);
+  background:linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.13);
+  backdrop-filter:blur(4px);
+  overflow:hidden;
+  transition:transform .5s cubic-bezier(.22,.61,.36,1), background .5s ease, border-color .5s ease, box-shadow .5s ease;
+}
+.evento::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;
+  width:100%;height:2px;
+  background:linear-gradient(90deg, var(--vermelho-claro), transparent);
+  opacity:.8;
+  transition:opacity .4s ease;
+}
+.evento:hover{
+  transform:translateY(-8px) scale(1.015);
+  background:linear-gradient(160deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
+  border-color:rgba(242,114,124,.45);
+  box-shadow:0 30px 54px -28px rgba(0,0,0,.65);
+}
+.evento:hover::before{opacity:1}
+.evento__icon{
+  font-size:1.75rem;
+  margin-bottom:1rem;
+  display:block;
+  transition:transform .5s cubic-bezier(.34,1.6,.64,1);
+}
+.evento:hover .evento__icon{transform:scale(1.25) rotate(-8deg)}
+.evento h3{font-size:1.2rem;margin-bottom:.55rem}
+.evento p{font-size:.92rem;color:rgba(255,255,255,.74);font-weight:500}
+
+/* ============================================================
+   13. DEPOIMENTOS
+   ============================================================ */
+.depoimentos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));
+  gap:1.4rem;
+}
+.depoimento{
+  position:relative;
+  background:var(--branco);
+  border-radius:var(--raio);
+  padding:2rem 1.8rem;
+  box-shadow:var(--sombra-suave);
+  border:1px solid rgba(23,57,44,.06);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease, border-color .5s ease;
+}
+.depoimento::before{
+  content:"”";
+  position:absolute;
+  top:.3rem;right:1.4rem;
+  font-family:var(--fonte-titulo);
+  font-size:5rem;
+  line-height:1;
+  color:rgba(200,32,46,.16);
+  transition:color .4s ease, transform .4s ease;
+}
+.depoimento:hover{
+  transform:translateY(-8px) rotate(.3deg);
+  box-shadow:0 34px 60px -30px rgba(14,36,26,.5);
+  border-color:rgba(200,32,46,.2);
+}
+.depoimento:hover::before{color:rgba(200,32,46,.32);transform:scale(1.08)}
+.stars{display:flex;gap:.15rem;color:var(--vermelho);font-size:.95rem;letter-spacing:.08em}
+.depoimento blockquote{
+  font-size:.96rem;
+  color:var(--verde-800);
+  line-height:1.75;
+  font-style:italic;
+  font-weight:500;
+}
+.depoimento footer{
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:var(--pedra);
+  margin-top:auto;
+}
+
+/* ============================================================
+   14. DIFERENCIAIS
+   ============================================================ */
+.diferenciais{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  gap:1rem;
+}
+.diferencial{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:1.05rem 1.25rem;
+  font-size:.9rem;
+  font-weight:700;
+  color:rgba(255,255,255,.92);
+  transition:background .35s ease, transform .35s cubic-bezier(.34,1.4,.64,1), border-color .35s ease;
+}
+.diferencial:hover{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(242,114,124,.5);
+  transform:translateY(-4px) scale(1.02);
+}
+.diferencial span:first-child{font-size:1.35rem;line-height:1;transition:transform .4s cubic-bezier(.34,1.6,.64,1)}
+.diferencial:hover span:first-child{transform:scale(1.2) rotate(-6deg)}
+
+/* ============================================================
+   15. LOCALIZAÇÃO
+   ============================================================ */
+.local__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(2rem, 5vw, 4rem);
+  align-items:center;
+}
+.mapa{
+  aspect-ratio:5/4;
+  border-radius:var(--raio);
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(23,57,44,.1);
+  box-shadow:var(--sombra-suave);
+}
+.mapa iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:320px;
+  border:0;
+}
+
+.endereco{
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+  padding:1.4rem 0;
+  border-top:1px solid rgba(23,57,44,.1);
+  border-bottom:1px solid rgba(23,57,44,.1);
+  margin:1.7rem 0 2rem;
+}
+.endereco p{color:var(--pedra);font-size:.98rem;margin:0;font-weight:500}
+.endereco strong{color:var(--verde-800)}
+
+.info-lista{display:grid;gap:.85rem;margin-bottom:2rem}
+.info-lista li{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+  font-size:.95rem;
+  color:var(--verde-800);
+  font-weight:600;
+}
+.info-lista li span{
+  width:38px;height:38px;
+  flex-shrink:0;
+  border-radius:50%;
+  background:var(--vermelho-suave);
+  display:grid;
+  place-items:center;
+  font-size:1rem;
+  transition:transform .4s cubic-bezier(.34,1.6,.64,1), background .3s ease;
+}
+.info-lista li:hover span{transform:scale(1.12) rotate(-6deg);background:#FAD5D8}
+
+/* ============================================================
+   16. CTA FINAL
+   ============================================================ */
+.cta{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(60,130,98,.5), transparent 70%),
+    radial-gradient(60% 50% at 85% 90%, rgba(200,32,46,.28), transparent 70%),
+    linear-gradient(180deg, #17392C, #0E241A);
+  color:#fff;
+  padding-block:clamp(4.5rem, 8vw, 7rem);
+}
+.cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+  background-size:26px 26px;
+  opacity:.45;
+  pointer-events:none;
+}
+.cta__inner{position:relative;z-index:3;max-width:720px;margin-inline:auto}
+.cta h2{color:#fff;font-size:clamp(1.95rem, 4.4vw, 3rem);margin-bottom:1.1rem}
+.cta p{color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:2.3rem;font-weight:500}
+.cta__actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-bottom:2.2rem}
+.cta__redes{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.8rem;
+  justify-content:center;
+  font-size:.88rem;
+  color:rgba(255,255,255,.7);
+  font-weight:700;
+}
+.cta__redes a{display:inline-flex;align-items:center;gap:.5rem;transition:color .25s ease, transform .25s ease}
+.cta__redes a:hover{color:var(--vermelho-claro);transform:translateY(-2px)}
+
+.cta__mountains{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  width:100%;
+  height:180px;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* ============================================================
+   17. FOOTER
+   ============================================================ */
+.footer{
+  position:relative;
+  background:var(--verde-900);
+  color:rgba(255,255,255,.62);
+  padding-block:3.5rem 2rem;
+  font-size:.9rem;
+  overflow:hidden;
+}
+.footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(1.4px 1.4px at 15% 30%, rgba(255,255,255,.35), transparent 60%),
+    radial-gradient(1.2px 1.2px at 42% 68%, rgba(255,255,255,.28), transparent 60%),
+    radial-gradient(1.5px 1.5px at 68% 22%, rgba(255,255,255,.32), transparent 60%),
+    radial-gradient(1.2px 1.2px at 86% 54%, rgba(255,255,255,.26), transparent 60%);
+  animation:twinkleLayer 9s ease-in-out infinite alternate;
+}
+.footer > .container{position:relative;z-index:2}
+.footer__grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  gap:2.5rem;
+  padding-bottom:2.5rem;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer .logo__title{color:#fff}
+.footer__sobre p{margin-top:1.1rem;max-width:330px;line-height:1.8;color:rgba(255,255,255,.58);font-weight:500}
+.footer h4{
+  color:#fff;
+  font-family:var(--fonte-texto);
+  font-size:.74rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:1.1rem;
+}
+.footer__links{display:grid;gap:.65rem}
+.footer__links a{transition:color .25s ease, padding-left .25s ease}
+.footer__links a:hover{color:var(--vermelho-claro);padding-left:4px}
+.footer__bottom{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:1rem;
+  padding-top:1.8rem;
+  font-size:.78rem;
+  color:rgba(255,255,255,.45);
+  font-weight:600;
+}
+
+/* ============================================================
+   18. LIGHTBOX
+   ============================================================ */
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  background:rgba(8,22,16,.94);
+  backdrop-filter:blur(8px);
+  display:grid;
+  place-items:center;
+  padding:1.5rem;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .35s ease, visibility .35s ease;
+}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox__box{width:min(880px, 100%);transform:scale(.94);transition:transform .4s cubic-bezier(.22,.61,.36,1)}
+.lightbox.is-open .lightbox__box{transform:scale(1)}
+.lightbox__box .photo{aspect-ratio:16/10}
+.lightbox__box .photo__img{opacity:1}
+.lightbox__box .photo__inner{display:flex}
+.lightbox__box .photo--loaded .photo__inner{display:none}
+.lightbox__caption{
+  text-align:center;
+  color:rgba(255,255,255,.88);
+  margin-top:1.2rem;
+  font-size:.84rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.lightbox__close{
+  position:absolute;
+  top:1.2rem;right:1.2rem;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.25);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:1.4rem;
+  transition:background .25s ease, transform .3s ease;
+}
+.lightbox__close:hover{background:var(--vermelho);transform:rotate(90deg) scale(1.05)}
+
+/* ============================================================
+   19. ANIMAÇÃO DE SCROLL
+   ============================================================ */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .85s cubic-bezier(.22,.61,.36,1), transform .85s cubic-bezier(.22,.61,.36,1);
+  will-change:opacity, transform;
+}
+.reveal.is-visible{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.1s}
+.reveal[data-delay="2"]{transition-delay:.2s}
+.reveal[data-delay="3"]{transition-delay:.3s}
+
+/* ============================================================
+   20. RESPONSIVO
+   ============================================================ */
+@media (max-width:980px){
+  .nav__list{display:none}
+  .nav__cta{display:none}
+  .nav-toggle{display:grid}
+  .nav{display:none}
+
+  .audio-toggle{top:86px;right:12px;width:50px;height:50px}
+  .audio-hint{top:144px;right:12px}
+
+  .sobre__grid{grid-template-columns:1fr}
+  .sobre__fotos{min-height:0;grid-template-columns:1fr;gap:.85rem}
+  .sobre__fotos .photo:first-child{aspect-ratio:16/10;height:auto}
+  .sobre__fotos-col{grid-template-rows:none;grid-template-columns:1fr 1fr;gap:.85rem}
+  .sobre__fotos-col .photo{aspect-ratio:1;height:auto}
+
+  .local__grid{grid-template-columns:1fr}
+  .mapa{aspect-ratio:16/10;order:2}
+
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .footer__sobre{grid-column:1/-1}
+
+  .fauna--macaw{width:56px;top:18%;left:5%}
+  .fauna--toucan{width:54px;top:26%;right:5%}
+  .fauna--flock{width:160px}
+  .hero__sun{width:160px;height:160px;top:8%;right:10%}
+
+  .trees-row{height:270px}
+  .hero{padding-bottom:clamp(5rem, 12vh, 9rem)}
+}
+
+@media (max-width:760px){
+  .destaques{padding-block:1.8rem 3rem}
+  .destaques__card{grid-template-columns:1fr 1fr;gap:.25rem;padding:1.4rem 1rem}
+  .destaque + .destaque::before{display:none}
+  .destaque{padding:.9rem .5rem}
+  .destaque__title{font-size:.94rem}
+
+  .hero__sun{width:130px;height:130px;top:6%;right:8%}
+  .trees-row{height:230px}
+
+  .galeria{grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));gap:.7rem}
+  .galeria__item{aspect-ratio:1}
+  .galeria__item .photo__label{font-size:.68rem}
+  .galeria__item .photo__icon{width:26px;height:26px}
+
+  .footer__grid{grid-template-columns:1fr;gap:2rem}
+  .footer__bottom{flex-direction:column;text-align:center;align-items:center}
+
+  .whatsapp-fab{width:58px;height:58px;right:14px;bottom:14px}
+  .whatsapp-fab svg{width:30px;height:30px}
+}
+
+@media (max-width:480px){
+  .hero h1{font-size:clamp(1.9rem, 9vw, 2.6rem)}
+  .hero__lead{font-size:.95rem}
+  .hero__badge{font-size:.62rem;letter-spacing:.14em;padding:.4rem .9rem}
+  .trees-row{height:200px}
+  .destaques__card{padding:1.1rem .8rem}
+  .destaque__icon{font-size:1.4rem}
+  .destaque__title{font-size:.88rem}
+  .destaque__text{font-size:.66rem}
+}
+
+@media (max-width:420px){
+  .sobre__fotos-col{grid-template-columns:1fr}
+  .btn{width:100%;padding:.9rem 1.2rem}
+  .cta__actions{flex-direction:column}
+  .audio-toggle{width:46px;height:46px;top:78px}
+  .audio-hint{top:130px;font-size:.64rem}
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .reveal{opacity:1;transform:none}
+  .fauna--flock,.cloud{display:none}
+  .tree,.tree-leaves{animation:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- Áudio de fundo (tema.mp3) -->
+<audio id="temaAudio" src="song/tema.mp3" loop preload="auto"></audio>
+
+<!-- Botão de áudio -->
+<button class="audio-toggle" id="audioToggle" aria-pressed="false" aria-label="Ativar música de fundo">
+  <span class="audio-toggle__eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <svg class="audio-toggle__muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 18V5l12-2v13"/>
+    <circle cx="6" cy="18" r="3"/>
+    <circle cx="18" cy="16" r="3"/>
+    <line x1="3" y1="3" x2="21" y2="21"/>
+  </svg>
+</button>
+<span class="audio-hint" id="audioHint">Toque para ouvir 🎵</span>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#inicio" class="logo" aria-label="Sítio Rio Acima — página inicial">
+      <span class="logo__mark" aria-hidden="true">🌿</span>
+      <span class="logo__text">
+        <span class="logo__title">Sítio Rio Acima</span>
+        <span class="logo__sub">Guaratinguetá · SP</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#inicio">Início</a></li>
+        <li><a class="nav__link" href="#sobre">O Sítio</a></li>
+        <li><a class="nav__link" href="#estrutura">Estrutura</a></li>
+        <li><a class="nav__link" href="#galeria">Galeria</a></li>
+        <li><a class="nav__link" href="#eventos">Eventos</a></li>
+        <li><a class="nav__link" href="#localizacao">Localização</a></li>
+      </ul>
+      <a class="nav__cta" href="#contato">Reservar</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle__bars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <nav class="nav--mobile" id="navMobile" aria-label="Navegação mobile">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">O Sítio</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#localizacao">Localização</a>
+    <a class="nav__cta" href="#contato">Fazer reserva</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       HERO — céu azul, nuvens, pássaros, montanhas, árvores grandes
+       ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="hero__sun" aria-hidden="true"></div>
+
+    <div class="hero__clouds" aria-hidden="true">
+      <div class="cloud cloud--1">
+        <svg viewBox="0 0 220 70"><g fill="#FFFFFF"><ellipse cx="45" cy="48" rx="45" ry="20"/><ellipse cx="100" cy="36" rx="55" ry="24"/><ellipse cx="160" cy="48" rx="45" ry="20"/><ellipse cx="78" cy="30" rx="30" ry="16"/></g></svg>
+      </div>
+      <div class="cloud cloud--2">
+        <svg viewBox="0 0 220 70"><g fill="#FFFFFF"><ellipse cx="50" cy="48" rx="48" ry="20"/><ellipse cx="110" cy="34" rx="60" ry="26"/><ellipse cx="170" cy="48" rx="42" ry="20"/></g></svg>
+      </div>
+      <div class="cloud cloud--3">
+        <svg viewBox="0 0 220 70"><g fill="#FFFFFF"><ellipse cx="55" cy="50" rx="45" ry="18"/><ellipse cx="110" cy="40" rx="50" ry="22"/><ellipse cx="165" cy="50" rx="45" ry="18"/></g></svg>
+      </div>
+      <div class="cloud cloud--4">
+        <svg viewBox="0 0 220 70"><g fill="#FFFFFF"><ellipse cx="45" cy="48" rx="42" ry="18"/><ellipse cx="105" cy="38" rx="55" ry="24"/><ellipse cx="165" cy="48" rx="42" ry="18"/></g></svg>
+      </div>
+      <div class="cloud cloud--5">
+        <svg viewBox="0 0 220 70"><g fill="#FFFFFF"><ellipse cx="55" cy="48" rx="45" ry="18"/><ellipse cx="110" cy="38" rx="50" ry="22"/><ellipse cx="160" cy="48" rx="40" ry="18"/></g></svg>
+      </div>
+    </div>
+
+    <div class="hero__fauna" aria-hidden="true">
+      <svg class="fauna fauna--macaw" viewBox="0 0 80 80">
+        <g fill="#E23B49">
+          <ellipse cx="34" cy="46" rx="10" ry="14.5" transform="rotate(-10 34 46)"/>
+          <circle cx="44" cy="25" r="8.4"/>
+          <path d="M50 19.5c5.2 0 8.6 3.2 9.6 7.4-3.2 2.2-7.4 1.8-10.4-1.2z"/>
+          <path d="M26 58c-4 9.6-9.6 17-15.6 22 8.4-3.2 15.4-9.4 19.6-17.4z"/>
+          <path d="M25 37.5c-5.2 5.4-8.4 12.4-8.4 19.6 4.2-7.2 8.6-12.4 14.6-15.4z"/>
+        </g>
+        <circle cx="46.5" cy="23.5" r="1.6" fill="#0E241A"/>
+      </svg>
+
+      <svg class="fauna fauna--toucan" viewBox="0 0 80 80">
+        <g fill="#1B4232">
+          <ellipse cx="32" cy="47" rx="10" ry="14.5" transform="rotate(-8 32 47)"/>
+          <circle cx="42" cy="26" r="8.4"/>
+          <path d="M24 58c-3.4 9.6-8.6 17-14.6 22 8.4-3.2 14.6-9.4 18.8-17.4z"/>
+          <path d="M23 37.5c-5.2 5.4-8.4 12.4-8.4 19.6 4.2-7.2 8.6-12.4 14.6-15.4z"/>
+        </g>
+        <path d="M50 22.5c9.4-3 18.6.4 23.4 7.6-7.4 5.4-16.6 5.2-23.6.8z" fill="#E8892B"/>
+        <circle cx="44.5" cy="24.5" r="1.6" fill="#FBF8F1"/>
+      </svg>
+
+      <svg class="fauna fauna--flock" viewBox="0 0 220 60">
+        <g fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2.4" stroke-linecap="round">
+          <path d="M10 30 Q19 20 28 30 Q37 20 46 30"/>
+          <path d="M62 18 Q69 10 76 18 Q83 10 90 18"/>
+          <path d="M108 34 Q117 24 126 34 Q135 24 144 34"/>
+          <path d="M158 14 Q164 7 170 14 Q176 7 182 14"/>
+        </g>
+      </svg>
+    </div>
+
+    <svg class="hero__mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="rgba(168,196,212,.55)" d="M0,262 L110,186 L228,246 L360,158 L500,250 L640,178 L790,258 L940,172 L1080,252 L1230,190 L1352,246 L1440,208 L1440,400 L0,400 Z"/>
+      <path fill="rgba(110,146,166,.7)" d="M0,300 L140,226 L286,292 L430,214 L580,296 L730,228 L880,300 L1030,232 L1180,298 L1330,238 L1440,286 L1440,400 L0,400 Z"/>
+      <path fill="#3E6275" d="M0,340 L160,286 L320,338 L480,282 L640,342 L800,288 L960,344 L1120,290 L1280,340 L1440,296 L1440,400 L0,400 Z"/>
+    </svg>
+
+    <!-- Árvores geradas via JS (maiores, mais presentes, com movimento) -->
+    <div class="trees-row" id="treesRow" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__badge">Serra da Mantiqueira · Guaratinguetá</p>
+      <h1>Um refúgio entre<br><em>montanhas e memórias</em></h1>
+      <p class="hero__lead">
+        O cenário perfeito para celebrar, relaxar e criar memórias inesquecíveis.
+        Natureza, conforto e lazer em um só lugar, com uma vista encantadora para a Serra da Mantiqueira.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--vermelho" href="https://wa.me/5512988752697?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20S%C3%ADtio%20Rio%20Acima%20e%20fazer%20uma%20reserva." target="_blank" rel="noopener">
+          💬 Falar no WhatsApp
+        </a>
+        <a class="btn btn--outline" href="#estrutura">Conhecer a estrutura</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESTAQUES — agora em seção própria, abaixo do cenário
+       ============================================================ -->
+  <section class="destaques" aria-label="Destaques do Sítio Rio Acima">
+    <div class="container">
+      <div class="destaques__card">
+        <div class="destaque">
+          <span class="destaque__icon" aria-hidden="true">🎉</span>
+          <span class="destaque__title">Até 50 pessoas</span>
+          <span class="destaque__text">Eventos</span>
+        </div>
+        <div class="destaque">
+          <span class="destaque__icon" aria-hidden="true">🏡</span>
+          <span class="destaque__title">7 hóspedes</span>
+          <span class="destaque__text">Hospedagem</span>
+        </div>
+        <div class="destaque">
+          <span class="destaque__icon" aria-hidden="true">🏊</span>
+          <span class="destaque__title">Piscina & Jacuzzi</span>
+          <span class="destaque__text">Lazer aquático</span>
+        </div>
+        <div class="destaque">
+          <span class="destaque__icon" aria-hidden="true">⛰️</span>
+          <span class="destaque__title">Mantiqueira</span>
+          <span class="destaque__text">Vista privilegiada</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOBRE
+       ============================================================ -->
+  <section class="section section--creme sobre" id="sobre">
+    <div class="container sobre__grid">
+
+      <div class="sobre__fotos reveal">
+        <figure class="photo">
+          <img class="photo__img"
+               src="img/serra mantiqueira.jpg"
+               alt="Vista panorâmica da Serra da Mantiqueira"
+               loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner">
+            <svg class="photo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.7a2 2 0 0 0 1.7-.95l.7-1.1A2 2 0 0 1 11.3 3h1.4a2 2 0 0 1 1.7.95l.7 1.1A2 2 0 0 0 16.8 6h1.7A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/>
+              <circle cx="12" cy="12.5" r="3.4"/>
+            </svg>
+            <span class="photo__label">Vista da Serra da Mantiqueira</span>
+            <span class="photo__sub">Foto principal</span>
+          </div>
+        </figure>
+
+        <div class="sobre__fotos-col">
+          <figure class="photo">
+            <img class="photo__img" src="img/salao.jpg" alt="Salão de Festas" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Salão de Festas</span></div>
+          </figure>
+          <figure class="photo">
+            <img class="photo__img" src="img/piscina por do sol.png" alt="Piscina do sítio ao pôr do sol" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Piscina ao pôr do sol</span></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="reveal" data-delay="1">
+        <p class="eyebrow">Bem-vindo ao Sítio Rio Acima</p>
+        <h2>Mais do que um lugar para eventos, um verdadeiro refúgio</h2>
+        <p>
+          Entre as paisagens privilegiadas de <strong>Guaratinguetá</strong>, cercado pelo verde da natureza
+          e com uma vista encantadora para a majestosa <strong>Serra da Mantiqueira</strong>, o Sítio Rio Acima
+          é um espaço pensado para proporcionar experiências únicas de lazer, descanso e confraternização.
+        </p>
+        <p>
+          Famílias, amigos, empresas e grupos encontram aqui um ambiente acolhedor, seguro e integrado à natureza,
+          com infraestrutura completa para festas, encontros e hospedagem — reunindo conforto, diversão e
+          tranquilidade em um único lugar, longe da correria da cidade.
+        </p>
+        <ul class="sobre__lista">
+          <li>Localizado na Estrada do Mato Seco, 1.850 em Guaratinguetá/SP</li>
+          <li>Preparado para receber grupos de até 50 pessoas com exclusividade</li>
+          <li>Lazer, contato com a natureza e estrutura para eventos</li>
+          <li>Cada detalhe planejado para o seu bem-estar</li>
+        </ul>
+        <a class="btn btn--verde" href="#estrutura">Ver a estrutura completa</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ESTRUTURA
+       ============================================================ -->
+  <section class="section section--areia" id="estrutura">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Nossa estrutura</p>
+        <h2>Tudo o que você precisa para um dia inesquecível</h2>
+        <p>Conforto, diversão e tranquilidade reunidos em um ambiente integrado à natureza.</p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card reveal">
+          <figure class="photo">
+            <img class="photo__img" src="img/piscina jacuzzi1.jpg" alt="Piscina com jacuzzi e área infantil" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner">
+              <svg class="photo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.7a2 2 0 0 0 1.7-.95l.7-1.1A2 2 0 0 1 11.3 3h1.4a2 2 0 0 1 1.7.95l.7 1.1A2 2 0 0 0 16.8 6h1.7A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/>
+                <circle cx="12" cy="12.5" r="3.4"/>
+              </svg>
+              <span class="photo__label">Piscina · Jacuzzi · Área infantil</span>
+            </div>
+          </figure>
+          <div class="card__body">
+            <h3>Piscina com Área Infantil e Jacuzzi</h3>
+            <p>
+              Ampla área de lazer aquática, projetada para adultos e crianças. A área rasa infantil
+              garante segurança aos pequenos, enquanto a jacuzzi convida ao relaxamento com vista
+              para a natureza. Nos dias ensolarados, é o ponto de encontro preferido do sítio.
+            </p>
+            <ul class="tags"><li>Aniversários</li><li>Família</li><li>Descanso</li></ul>
+          </div>
+        </article>
+
+        <article class="card reveal" data-delay="1">
+          <figure class="photo">
+            <img class="photo__img" src="img/campo futebol.jpg" alt="Campo de futebol do sítio" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Campo de futebol</span></div>
+          </figure>
+          <div class="card__body">
+            <h3>Campo de Futebol e Área Recreativa</h3>
+            <p>
+              Espaço ideal para partidas recreativas, gincanas e brincadeiras em grupo. A área aberta
+              permite que as crianças corram livremente enquanto os adultos aproveitam atividades
+              esportivas em meio à natureza.
+            </p>
+            <ul class="tags"><li>Torneios</li><li>Gincanas</li><li>Festas infantis</li></ul>
+          </div>
+        </article>
+
+        <article class="card reveal" data-delay="2">
+          <figure class="photo">
+            <img class="photo__img" src="img/salao decorado.jpg" alt="Salão de festas decorado" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Salão de festas</span></div>
+          </figure>
+          <div class="card__body">
+            <h3>Salão de Festas e Área Coberta</h3>
+            <p>
+              Infraestrutura preparada para receber eventos durante todo o ano, com conforto mesmo
+              em dias chuvosos. O salão pode ser decorado e personalizado para diferentes ocasiões,
+              de acordo com o estilo de cada cliente.
+            </p>
+            <ul class="tags"><li>Casamentos</li><li>Chá revelação</li><li>Batizados</li><li>Corporativo</li></ul>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <figure class="photo">
+            <img class="photo__img" src="img/churrasqueira.jpg" alt="Espaço gourmet com churrasqueira" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Espaço gourmet</span></div>
+          </figure>
+          <div class="card__body">
+            <h3>Espaço Gourmet e Churrasqueira</h3>
+            <p>
+              Nenhuma reunião fica completa sem boa comida e momentos compartilhados. Área gourmet
+              equipada com churrasqueira, geladeira, freezer, espaço para preparo de alimentos e
+              ambiente integrado para refeições coletivas.
+            </p>
+            <ul class="tags"><li>Churrascos</li><li>Almoços</li><li>Confraternizações</li></ul>
+          </div>
+        </article>
+
+        <article class="card reveal" data-delay="1">
+          <figure class="photo">
+            <img class="photo__img" src="img/acomodacao.jpg" alt="Acomodação para hóspedes" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Acomodação</span></div>
+          </figure>
+          <div class="card__body">
+            <h3>Hospedagem e Pernoite</h3>
+            <p>
+              Acomodação confortável para até 7 hóspedes. Passe a noite no sítio, desfrute da
+              tranquilidade do ambiente rural, observe o céu estrelado e acorde cercado pela
+              natureza e pelo canto dos pássaros.
+            </p>
+            <ul class="tags"><li>Finais de semana</li><li>Retiros</li><li>Lua de mel</li></ul>
+          </div>
+        </article>
+
+        <article class="card reveal" data-delay="2">
+          <figure class="photo">
+            <img class="photo__img" src="img/cenario para foto.jpg" alt="Cenário natural para fotos" loading="lazy"
+                 onload="this.parentElement.classList.add('photo--loaded')"
+                 onerror="this.parentElement.classList.add('photo--error')">
+            <div class="photo__inner"><span class="photo__label">Cenários para fotos</span></div>
+          </figure>
+          <div class="card__body">
+            <h3>Cenários Incríveis para Fotografias</h3>
+            <p>
+              Vista para a Serra da Mantiqueira, área da piscina, jardins, gramados, pôr do sol
+              panorâmico e ambientes decorados. Cada canto do sítio transforma momentos especiais
+              em lembranças eternas.
+            </p>
+            <ul class="tags"><li>Ensaios</li><li>Casamentos</li><li>Pré-wedding</li></ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALERIA
+       ============================================================ -->
+  <section class="section section--creme" id="galeria">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Galeria</p>
+        <h2>Um cenário que encanta desde a chegada</h2>
+        <p>Explore os espaços do Sítio Rio Acima por tema.</p>
+      </div>
+
+      <div class="filtros reveal" role="tablist" aria-label="Filtrar galeria por categoria">
+        <button class="filtro is-active" data-filtro="todos" role="tab" aria-selected="true">Todos</button>
+        <button class="filtro" data-filtro="lazer" role="tab" aria-selected="false">Lazer</button>
+        <button class="filtro" data-filtro="natureza" role="tab" aria-selected="false">Natureza</button>
+        <button class="filtro" data-filtro="eventos" role="tab" aria-selected="false">Eventos</button>
+        <button class="filtro" data-filtro="gourmet" role="tab" aria-selected="false">Gourmet</button>
+      </div>
+
+      <div class="galeria reveal" id="galeriaGrid">
+
+        <figure class="photo galeria__item" data-cat="lazer" data-caption="Piscina principal">
+          <img class="photo__img" src="img/piscina jacuzzi1.jpg" alt="Piscina principal do Sítio Rio Acima" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Piscina principal</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="lazer" data-caption="Jacuzzi">
+          <img class="photo__img" src="img/jacuzzi.jpg" alt="Jacuzzi do sítio" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Jacuzzi</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="lazer" data-caption="Área infantil da piscina">
+          <img class="photo__img" src="img/area infantil.jpg" alt="Área infantil da piscina" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Área infantil</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="lazer" data-caption="Campo de futebol e área recreativa">
+          <img class="photo__img" src="img/campo futebol2.jpg" alt="Campo de futebol e área recreativa" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Campo de futebol</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="natureza" data-caption="Vista panorâmica da Serra da Mantiqueira">
+          <img class="photo__img" src="img/serra mantiqueira2.jpg" alt="Vista panorâmica da Serra da Mantiqueira" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Serra da Mantiqueira</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="natureza" data-caption="Áreas verdes e gramados">
+          <img class="photo__img" src="img/area verde.png" alt="Áreas verdes e gramados" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Áreas verdes</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="natureza" data-caption="Pôr do sol panorâmico">
+          <img class="photo__img" src="img/piscina por do sol.png" alt="Pôr do sol panorâmico" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Pôr do sol</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="natureza" data-caption="Ambientes arborizados">
+          <img class="photo__img" src="img/arborizado.jpg" alt="Ambientes arborizados" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Ambientes arborizados</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="eventos" data-caption="Salão de festas decorado">
+          <img class="photo__img" src="img/salao decorado.jpg" alt="Salão de festas decorado" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Salão decorado</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="eventos" data-caption="Casamento ao ar livre">
+          <img class="photo__img" src="img/casamento.jpg" alt="Casamento ao ar livre" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Casamento ao ar livre</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="eventos" data-caption="Festa de aniversário">
+          <img class="photo__img" src="img/aniversarios.jpg" alt="Festa de aniversário no sítio" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Aniversários</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="eventos" data-caption="Confraternização de empresa">
+          <img class="photo__img" src="img/confraternizacao.jpg" alt="Confraternização de empresa" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Confraternizações</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="gourmet" data-caption="Churrasqueira">
+          <img class="photo__img" src="img/churrasqueiro.jpg" alt="Churrasqueira do espaço gourmet" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Churrasqueira</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="gourmet" data-caption="Área de refeições coletivas">
+          <img class="photo__img" src="img/refeicoes.jpg" alt="Área de refeições coletivas" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Área de refeições</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+        <figure class="photo galeria__item" data-cat="gourmet" data-caption="Espaço gourmet integrado">
+          <img class="photo__img" src="img/gourmet.jpg" alt="Espaço gourmet integrado" loading="lazy"
+               onload="this.parentElement.classList.add('photo--loaded')"
+               onerror="this.parentElement.classList.add('photo--error')">
+          <div class="photo__inner"><span class="photo__label">Espaço gourmet</span></div>
+          <span class="galeria__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EVENTOS
+       ============================================================ -->
+  <section class="section section--escura" id="eventos">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Tipos de eventos</p>
+        <h2>Momentos que merecem um cenário especial</h2>
+        <p>Do íntimo ao corporativo, o Sítio Rio Acima se adapta ao seu evento com flexibilidade total.</p>
+      </div>
+
+      <div class="eventos">
+        <article class="evento reveal">
+          <span class="evento__icon" aria-hidden="true">🎂</span>
+          <h3>Festas de Aniversário</h3>
+          <p>Celebre mais um ano de vida em um ambiente exclusivo, confortável e cercado pela natureza.</p>
+        </article>
+
+        <article class="evento reveal" data-delay="1">
+          <span class="evento__icon" aria-hidden="true">💍</span>
+          <h3>Casamentos ao Ar Livre</h3>
+          <p>Troque alianças em meio a paisagens naturais encantadoras, tornando seu grande dia ainda mais especial.</p>
+        </article>
+
+        <article class="evento reveal" data-delay="2">
+          <span class="evento__icon" aria-hidden="true">🎈</span>
+          <h3>Chá Revelação e Chá de Bebê</h3>
+          <p>Espaço ideal para reunir familiares e amigos em momentos cheios de emoção e expectativa.</p>
+        </article>
+
+        <article class="evento reveal">
+          <span class="evento__icon" aria-hidden="true">🤝</span>
+          <h3>Confraternizações Empresariais</h3>
+          <p>Ofereça aos colaboradores uma experiência diferenciada em um ambiente inspirador e descontraído.</p>
+        </article>
+
+        <article class="evento reveal" data-delay="1">
+          <span class="evento__icon" aria-hidden="true">🕊️</span>
+          <h3>Eventos Religiosos</h3>
+          <p>O clima tranquilo do sítio favorece encontros, retiros e celebrações religiosas em contato com a natureza.</p>
+        </article>
+
+        <article class="evento reveal" data-delay="2">
+          <span class="evento__icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+          <h3>Reuniões Familiares</h3>
+          <p>Reúna várias gerações em um único lugar para criar memórias inesquecíveis e fortalecer laços.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DEPOIMENTOS
+       ============================================================ -->
+  <section class="section section--areia" id="depoimentos">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Quem já viveu</p>
+        <h2>O que nossos clientes dizem</h2>
+        <p>Histórias reais de quem escolheu o Sítio Rio Acima para celebrar momentos especiais.</p>
+      </div>
+
+      <div class="depoimentos">
+        <article class="depoimento reveal">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“Lugar maravilhoso! Extremamente bem cuidado, limpo e com uma vista incrível da Serra da Mantiqueira. Nossa família adorou o final de semana.”</blockquote>
+          <footer>Família · Final de semana</footer>
+        </article>
+
+        <article class="depoimento reveal" data-delay="1">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“A piscina e a jacuzzi fizeram a diferença. Ambiente acolhedor e perfeito para reunir amigos.”</blockquote>
+          <footer>Grupo de amigos</footer>
+        </article>
+
+        <article class="depoimento reveal" data-delay="2">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“Realizamos a festa de aniversário da nossa filha e tudo foi perfeito. Espaço amplo, seguro e muito bonito.”</blockquote>
+          <footer>Festa de aniversário</footer>
+        </article>
+
+        <article class="depoimento reveal">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“Excelente atendimento e uma paisagem espetacular. Voltaremos em breve.”</blockquote>
+          <footer>Confraternização</footer>
+        </article>
+
+        <article class="depoimento reveal" data-delay="1">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“Um verdadeiro refúgio em Guaratinguetá. Ideal para descansar e celebrar momentos especiais.”</blockquote>
+          <footer>Descanso em família</footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DIFERENCIAIS
+       ============================================================ -->
+  <section class="section section--escura" id="diferenciais">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Por que escolher</p>
+        <h2>Diferenciais do Sítio Rio Acima</h2>
+        <p>Tudo pensado para que você só precise se preocupar em aproveitar.</p>
+      </div>
+
+      <ul class="diferenciais reveal">
+        <li class="diferencial"><span aria-hidden="true">🌿</span><span>Vista privilegiada para a Serra da Mantiqueira</span></li>
+        <li class="diferencial"><span aria-hidden="true">🏊</span><span>Piscina com área infantil</span></li>
+        <li class="diferencial"><span aria-hidden="true">♨️</span><span>Jacuzzi para relaxamento</span></li>
+        <li class="diferencial"><span aria-hidden="true">⚽</span><span>Campo para atividades esportivas</span></li>
+        <li class="diferencial"><span aria-hidden="true">🍖</span><span>Espaço gourmet com churrasqueira</span></li>
+        <li class="diferencial"><span aria-hidden="true">❄️</span><span>Geladeira e freezer à disposição</span></li>
+        <li class="diferencial"><span aria-hidden="true">🎉</span><span>Estrutura para eventos de até 50 pessoas</span></li>
+        <li class="diferencial"><span aria-hidden="true">🏡</span><span>Hospedagem para até 7 hóspedes</span></li>
+        <li class="diferencial"><span aria-hidden="true">📸</span><span>Cenários incríveis para fotos</span></li>
+        <li class="diferencial"><span aria-hidden="true">🦜</span><span>Araras e tucanos na natureza ao redor</span></li>
+        <li class="diferencial"><span aria-hidden="true">👨‍👩‍👧‍👦</span><span>Ambiente familiar e seguro</span></li>
+        <li class="diferencial"><span aria-hidden="true">🚗</span><span>Fácil acesso em Guaratinguetá</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOCALIZAÇÃO
+       ============================================================ -->
+  <section class="section section--creme" id="localizacao">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Onde estamos</p>
+        <h2>Fácil acesso, longe da correria</h2>
+        <p>A apenas alguns minutos do centro de Guaratinguetá, no coração da natureza.</p>
+      </div>
+
+      <div class="local__grid">
+        <div class="reveal">
+          <div class="endereco">
+            <p><strong>Sítio Rio Acima</strong></p>
+            <p>Estrada do Mato Seco, nº 1.850 — Bairro Mato Seco</p>
+            <p>Guaratinguetá – SP · CEP 12510-230</p>
+          </div>
+          <ul class="info-lista">
+            <li><span aria-hidden="true">📍</span> Estrada do Mato Seco, 1.850 — Guaratinguetá/SP</li>
+            <li><span aria-hidden="true">🚗</span> Fácil acesso, com estacionamento no local</li>
+            <li><span aria-hidden="true">⛰️</span> Vista panorâmica para a Serra da Mantiqueira</li>
+            <li><span aria-hidden="true">👥</span> Capacidade para até 50 convidados</li>
+          </ul>
+          <a class="btn btn--vermelho"
+             href="https://www.google.com/maps/search/?api=1&amp;query=S%C3%ADtio+Rio+Acima%2C+Estrada+do+Mato+Seco%2C+1850%2C+Guaratinguet%C3%A1%2C+SP%2C+12510-230"
+             target="_blank" rel="noopener">
+            🗺️ Abrir no Google Maps
+          </a>
+        </div>
+
+        <div class="mapa reveal" data-delay="1">
+          <iframe
+            src="https://www.google.com/maps?q=S%C3%ADtio+Rio+Acima%2C+Estrada+do+Mato+Seco%2C+1850%2C+Guaratinguet%C3%A1%2C+SP%2C+12510-230&amp;output=embed"
+            title="Mapa do Sítio Rio Acima, Estrada do Mato Seco, 1.850, Guaratinguetá"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="cta" id="contato">
+    <svg class="cta__mountains" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="rgba(0,0,0,.22)" d="M0,180 L0,120 L130,60 L260,116 L400,44 L540,120 L690,66 L840,124 L980,54 L1130,118 L1270,70 L1440,128 L1440,180 Z"/>
+      <path fill="rgba(0,0,0,.42)" d="M0,180 L0,150 L160,100 L320,152 L480,92 L640,154 L800,102 L960,156 L1120,96 L1280,150 L1440,108 L1440,180 Z"/>
+    </svg>
+
+    <div class="container cta__inner reveal">
+      <p class="eyebrow" style="justify-content:center">Faça sua reserva</p>
+      <h2>Transforme sua comemoração em uma experiência inesquecível</h2>
+      <p>
+        Seja para um aniversário, confraternização, encontro familiar, casamento intimista ou apenas
+        um final de semana de descanso, o Sítio Rio Acima oferece o ambiente ideal para viver momentos
+        especiais cercados pela natureza.
+      </p>
+
+      <div class="cta__actions">
+        <a class="btn btn--vermelho" href="https://wa.me/5512988752697?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20disponibilidade%20no%20S%C3%ADtio%20Rio%20Acima." target="_blank" rel="noopener">
+          💬 Reservar pelo WhatsApp
+        </a>
+        <a class="btn btn--outline" href="https://instagram.com/sitiorioacima_guaratingueta" target="_blank" rel="noopener">
+          📷 Ver o Instagram
+        </a>
+      </div>
+
+      <div class="cta__redes">
+        <a href="https://wa.me/5512988752697" target="_blank" rel="noopener">📞 (12) 98875-2697</a>
+        <a href="https://instagram.com/sitiorioacima_guaratingueta" target="_blank" rel="noopener">@sitiorioacima_guaratingueta</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__sobre">
+        <a href="#inicio" class="logo">
+          <span class="logo__mark" aria-hidden="true">🌿</span>
+          <span class="logo__text">
+            <span class="logo__title">Sítio Rio Acima</span>
+            <span class="logo__sub">Guaratinguetá · SP</span>
+          </span>
+        </a>
+        <p>Natureza, conforto, lazer e momentos inesquecíveis com a mais bela vista da Serra da Mantiqueira.</p>
+      </div>
+
+      <div>
+        <h4>Navegue</h4>
+        <ul class="footer__links">
+          <li><a href="#sobre">O Sítio</a></li>
+          <li><a href="#estrutura">Estrutura</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul class="footer__links">
+          <li><a href="https://wa.me/5512988752697" target="_blank" rel="noopener">WhatsApp (12) 98875-2697</a></li>
+          <li><a href="https://instagram.com/sitiorioacima_guaratingueta" target="_blank" rel="noopener">@sitiorioacima_guaratingueta</a></li>
+          <li>Estrada do Mato Seco, 1.850</li>
+          <li>Guaratinguetá – SP · 12510-230</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="ano"></span> Sítio Rio Acima — Todos os direitos reservados.</span>
+      <span>Feito com carinho no Vale do Paraíba 🌿</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     WHATSAPP FLUTUANTE
+     ============================================================ -->
+<a class="whatsapp-fab"
+   href="https://wa.me/5512988752697?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20S%C3%ADtio%20Rio%20Acima."
+   target="_blank" rel="noopener"
+   aria-label="Falar com o Sítio Rio Acima no WhatsApp">
+  <span class="whatsapp-fab__ring" aria-hidden="true"></span>
+  <span class="whatsapp-fab__ring" aria-hidden="true"></span>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16.04 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.72 6.4L3.2 28.8l6.58-1.72a12.75 12.75 0 0 0 6.26 1.6h.01c7.05 0 12.79-5.74 12.79-12.8 0-3.42-1.33-6.63-3.75-9.04a12.7 12.7 0 0 0-9.05-3.74zm0 23.36h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.08-3.92-.25-.4a10.55 10.55 0 0 1-1.62-5.64c0-5.86 4.77-10.62 10.62-10.62 2.84 0 5.5 1.1 7.5 3.11a10.55 10.55 0 0 1 3.11 7.51c0 5.86-4.77 10.62-10.62 10.62zm5.82-7.95c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.82.93-1.01 1.14-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65s1.14 3.08 1.3 3.29c.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.67.77.25 1.47.21 2.02.13.62-.09 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/>
+  </svg>
+  <span class="whatsapp-fab__label">Fale conosco 💬</span>
+</a>
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de foto">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Fechar">✕</button>
+  <div class="lightbox__box">
+    <div class="photo" id="lightboxPhoto">
+      <img class="photo__img" id="lightboxImg" src="" alt="" style="display:none">
+      <div class="photo__inner" id="lightboxInner">
+        <svg class="photo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.7a2 2 0 0 0 1.7-.95l.7-1.1A2 2 0 0 1 11.3 3h1.4a2 2 0 0 1 1.7.95l.7 1.1A2 2 0 0 0 16.8 6h1.7A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/>
+          <circle cx="12" cy="12.5" r="3.4"/>
+        </svg>
+        <span class="photo__label" id="lightboxLabel">Foto</span>
+        <span class="photo__sub">Espaço reservado para a imagem</span>
+      </div>
+    </div>
+    <p class="lightbox__caption" id="lightboxCaption">Foto</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* Ano no footer */
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  /* Header ao rolar */
+  const header = document.getElementById('header');
+  const onScroll = () => {
+    const s = window.scrollY > 40;
+    header.classList.toggle('is-scrolled', s);
+    document.body.classList.toggle('is-scrolled', s);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Menu mobile */
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  navToggle.addEventListener('click', () => {
+    const open = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!open));
+    navToggle.setAttribute('aria-label', open ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
+    navMobile.classList.toggle('is-open', !open);
+  });
+  navMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMobile.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* Áudio — song/tema.mp3 (loop + autoplay com fallback) */
+  const audio = document.getElementById('temaAudio');
+  const audioToggle = document.getElementById('audioToggle');
+  const audioHint = document.getElementById('audioHint');
+  let hintTimer = null;
+
+  function setAudioUI(playing) {
+    audioToggle.classList.toggle('is-playing', playing);
+    audioToggle.setAttribute('aria-pressed', String(playing));
+    audioToggle.setAttribute('aria-label', playing ? 'Desativar música de fundo' : 'Ativar música de fundo');
+    if (playing) hideHint();
+  }
+  function showHint() {
+    audioHint.classList.add('is-visible');
+    clearTimeout(hintTimer);
+    hintTimer = setTimeout(hideHint, 7000);
+  }
+  function hideHint() {
+    audioHint.classList.remove('is-visible');
+    clearTimeout(hintTimer);
+  }
+
+  audio.addEventListener('play', () => setAudioUI(true));
+  audio.addEventListener('pause', () => setAudioUI(false));
+
+  let unlocked = false;
+  function cleanupGestures() {
+    ['pointerdown','keydown','touchstart','scroll'].forEach(ev =>
+      window.removeEventListener(ev, gesturePlay)
+    );
+  }
+  function gesturePlay() {
+    if (unlocked) { cleanupGestures(); return; }
+    const p = audio.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => { unlocked = true; cleanupGestures(); }).catch(() => {});
+    }
+  }
+  function attemptAutoplay() {
+    const p = audio.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => { unlocked = true; cleanupGestures(); })
+       .catch(() => {
+         setAudioUI(false);
+         showHint();
+       });
+    } else if (!audio.paused) {
+      unlocked = true;
+    }
+  }
+  ['pointerdown','keydown','touchstart','scroll'].forEach(ev =>
+    window.addEventListener(ev, gesturePlay, { passive: true })
+  );
+  attemptAutoplay();
+
+  audioToggle.addEventListener('click', () => {
+    unlocked = true;
+    cleanupGestures();
+    if (audio.paused) {
+      const p = audio.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    } else {
+      audio.pause();
+    }
+  });
+
+  /* Reveal on scroll */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* Filtro galeria */
+  const filtros = document.querySelectorAll('.filtro');
+  const itens = document.querySelectorAll('.galeria__item');
+  filtros.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtros.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+      const cat = btn.dataset.filtro;
+      itens.forEach(item => {
+        const mostrar = cat === 'todos' || item.dataset.cat === cat;
+        item.classList.toggle('is-hidden', !mostrar);
+      });
+    });
+  });
+
+  /* Lightbox */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxLabel = document.getElementById('lightboxLabel');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxInner = document.getElementById('lightboxInner');
+  const lightboxPhoto = document.getElementById('lightboxPhoto');
+  const lightboxClose = document.getElementById('lightboxClose');
+  let lastFocused = null;
+
+  function openLightbox(caption, sourceImg) {
+    lastFocused = document.activeElement;
+    lightboxCaption.textContent = caption;
+    lightboxLabel.textContent = caption;
+
+    if (sourceImg && sourceImg.complete && sourceImg.naturalWidth > 0) {
+      lightboxImg.src = sourceImg.src;
+      lightboxImg.alt = sourceImg.alt || caption;
+      lightboxImg.style.display = 'block';
+      lightboxInner.style.display = 'none';
+      lightboxPhoto.classList.add('photo--loaded');
+    } else {
+      lightboxImg.style.display = 'none';
+      lightboxImg.removeAttribute('src');
+      lightboxInner.style.display = 'flex';
+      lightboxPhoto.classList.remove('photo--loaded');
+    }
+
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  itens.forEach(item => {
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
+    const caption = item.dataset.caption || 'Foto';
+    const img = item.querySelector('.photo__img');
+    item.addEventListener('click', () => openLightbox(caption, img));
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(caption, img);
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+  });
+
+  /* ==========================================================
+     ÁRVORES — geradas via JS, maiores e responsivas
+     ========================================================== */
+  const treesRow = document.getElementById('treesRow');
+
+  function buildTrees() {
+    if (!treesRow) return;
+    const vw = window.innerWidth;
+    const count = vw < 480 ? 9 : vw < 768 ? 12 : vw < 1100 ? 16 : 20;
+
+    const palettes = [
+      ['#1A4226', '#215532', '#2E7048', '#4A9466'],
+      ['#1D4A2B', '#255E38', '#35794E', '#5AA373'],
+      ['#1B4530', '#226140', '#2F7E56', '#4F9E74']
+    ];
+
+    let html = '';
+    for (let i = 0; i < count; i++) {
+      const left = -2 + (i / (count - 1)) * 104 + (Math.random() - 0.5) * 3;
+      const hPct = 62 + Math.random() * 32;        /* 62%–94% da altura da linha */
+      const dur = (3.8 + Math.random() * 2.6).toFixed(2);
+      const del = (Math.random() * 4).toFixed(2);
+      const leafDur = (2.6 + Math.random() * 1.8).toFixed(2);
+      const leafDel = (Math.random() * 3).toFixed(2);
+      const colors = palettes[i % palettes.length];
+
+      html += `
+        <div class="tree" style="left:${left.toFixed(2)}%;height:${hPct.toFixed(1)}%;--dur:${dur}s;--del:${del}s">
+          <svg viewBox="0 0 100 260" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <rect x="46" y="130" width="8" height="130" fill="#3A2418" rx="2"/>
+            <g class="tree-leaves" style="--leaf-dur:${leafDur}s;--leaf-del:${leafDel}s">
+              <ellipse cx="50" cy="112" rx="46" ry="54" fill="${colors[0]}"/>
+              <ellipse cx="24" cy="128" rx="30" ry="32" fill="${colors[1]}"/>
+              <ellipse cx="76" cy="128" rx="30" ry="32" fill="${colors[1]}"/>
+              <ellipse cx="50" cy="70" rx="37" ry="36" fill="${colors[2]}"/>
+              <ellipse cx="34" cy="58" rx="25" ry="23" fill="${colors[3]}"/>
+              <ellipse cx="66" cy="56" rx="25" ry="23" fill="${colors[3]}"/>
+            </g>
+          </svg>
+        </div>`;
+    }
+    treesRow.innerHTML = html;
+  }
+
+  buildTrees();
+
+  let treeResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(treeResizeTimer);
+    treeResizeTimer = setTimeout(buildTrees, 220);
+  });
+
+})();
+</script>
+</body>
+</html>
