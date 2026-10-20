@@ -263,7 +263,7 @@ h1,h2,h3,h4{
   object-fit:cover;
   z-index:1;
   opacity:0;
-  transition:opacity .55s ease, transform .8s cubic-bezier(.22,.61,.36,1);
+  transition:opacity .55s ease, transform .8s cubic-bezier(.22,.61,.36,1), filter .4s ease;
 }
 .photo--loaded .photo__img{opacity:1}
 .photo--loaded .photo__inner{display:none}
@@ -289,6 +289,35 @@ h1,h2,h3,h4{
   opacity:.94;
 }
 .photo__sub{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+
+/* Lupa universal em fotos clicáveis (galeria tem a própria) */
+.photo--zoomable{cursor:pointer}
+
+.photo--zoomable:not(.galeria__item)::before{
+  content:"";
+  position:absolute;
+  z-index:5;
+  top:50%;left:50%;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C8202E' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat center/20px;
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.7);
+  transition:opacity .35s ease, transform .35s cubic-bezier(.34,1.6,.64,1);
+  pointer-events:none;
+  box-shadow:0 10px 24px -8px rgba(0,0,0,.45);
+}
+.photo--zoomable:not(.galeria__item):hover::before{
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+}
+.photo--zoomable:not(.galeria__item):hover .photo__img{
+  filter:brightness(.9) saturate(1.05);
+}
+.photo--zoomable:not(.galeria__item):focus-visible{
+  outline:2px solid var(--vermelho);
+  outline-offset:3px;
+}
 
 /* ============================================================
    4. HEADER
@@ -644,12 +673,22 @@ body.is-scrolled .audio-toggle{
   z-index:3;
 }
 
-/* Fauna */
-.hero__fauna{position:absolute;inset:0;pointer-events:none;z-index:5}
-.fauna{position:absolute;filter:drop-shadow(0 8px 14px rgba(0,0,0,.22))}
+/* Fauna — container sem z-index para que os filhos participem
+   diretamente do stacking context do .hero */
+.hero__fauna{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+/* REGRA: pássaros sempre na frente de qualquer elemento visual do hero */
+.fauna{
+  position:absolute;
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.22));
+  z-index:20; /* acima de content(6), banners(8) e brand-block(9) */
+}
 .fauna--macaw{width:78px;top:48%;left:8%;animation:floatBird 6.5s ease-in-out infinite}
 .fauna--toucan{width:76px;top:56%;right:9%;animation:floatBird 7.5s ease-in-out infinite reverse}
-.fauna--flock{width:220px;top:42%;left:-240px;opacity:.6;animation:driftAcross 46s linear infinite}
+.fauna--flock{width:220px;top:42%;left:-240px;opacity:.6;animation:driftAcross 46s linear infinite;z-index:5}
 @keyframes floatBird{
   0%,100%{transform:translateY(0) rotate(-3deg)}
   50%{transform:translateY(-16px) rotate(3deg)}
@@ -1052,22 +1091,34 @@ body.is-scrolled .audio-toggle{
 /* ============================================================
    9. SOBRE
    ============================================================ */
+.sobre__hero-photo{
+  margin-bottom:clamp(2rem, 4vw, 3rem);
+}
+.sobre__hero-photo .photo{
+  aspect-ratio:21/9;
+  width:100%;
+}
+.sobre__hero-photo .photo:hover{transform:translateY(-4px)}
+.sobre__hero-photo .photo:hover .photo__img{transform:scale(1.04)}
+
 .sobre__grid{
   display:grid;
-  grid-template-columns:1fr 1.05fr;
+  grid-template-columns:1fr 1.1fr;
   gap:clamp(2rem, 5vw, 4.5rem);
   align-items:center;
 }
 .sobre__fotos{
   display:grid;
-  grid-template-columns:1.25fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:1rem;
-  min-height:460px;
 }
-.sobre__fotos-col{display:grid;grid-template-rows:1fr 1fr;gap:1rem}
-.sobre__fotos .photo{height:100%}
+.sobre__fotos .photo{
+  aspect-ratio:4/5;
+  height:auto;
+}
 .sobre__fotos .photo:hover{transform:translateY(-6px) rotate(-.6deg)}
 .sobre__fotos .photo:hover .photo__img{transform:scale(1.06)}
+
 .sobre h2{font-size:clamp(1.9rem, 3.6vw, 2.75rem);margin-bottom:1.2rem}
 .sobre p{color:var(--pedra);margin-bottom:1.05rem;font-size:1.02rem;font-weight:500}
 .sobre p strong{color:var(--verde-700);font-weight:800}
@@ -1594,10 +1645,9 @@ body.is-scrolled .audio-toggle{
   .audio-hint{display:none}
 
   .sobre__grid{grid-template-columns:1fr}
-  .sobre__fotos{min-height:0;grid-template-columns:1fr;gap:.85rem}
-  .sobre__fotos .photo:first-child{aspect-ratio:16/10;height:auto}
-  .sobre__fotos-col{grid-template-rows:none;grid-template-columns:1fr 1fr;gap:.85rem}
-  .sobre__fotos-col .photo{aspect-ratio:1;height:auto}
+  .sobre__hero-photo .photo{aspect-ratio:16/10}
+  .sobre__fotos{grid-template-columns:1fr 1fr;gap:.85rem}
+  .sobre__fotos .photo{aspect-ratio:1}
 
   .local__grid{grid-template-columns:1fr}
   .mapa{aspect-ratio:16/10;order:2}
@@ -1673,7 +1723,8 @@ body.is-scrolled .audio-toggle{
 }
 
 @media (max-width:420px){
-  .sobre__fotos-col{grid-template-columns:1fr}
+  .sobre__fotos{grid-template-columns:1fr}
+  .sobre__hero-photo .photo{aspect-ratio:4/3}
   .btn{width:100%;padding:.9rem 1.2rem}
   .cta__actions{flex-direction:column}
   .audio-toggle{width:46px;height:46px}
@@ -1845,27 +1896,50 @@ body.is-scrolled .audio-toggle{
       </div>
     </div>
 
+    <!-- Fauna: arara azul/verde/vermelha + tucano preto/amarelo -->
     <div class="hero__fauna" aria-hidden="true">
+      <!-- ARARA: penas azuis, verdes e vermelhas + bico amarelo -->
       <svg class="fauna fauna--macaw" viewBox="0 0 80 80">
-        <g fill="#E23B49">
-          <ellipse cx="34" cy="46" rx="10" ry="14.5" transform="rotate(-10 34 46)"/>
-          <circle cx="44" cy="25" r="8.4"/>
-          <path d="M50 19.5c5.2 0 8.6 3.2 9.6 7.4-3.2 2.2-7.4 1.8-10.4-1.2z"/>
-          <path d="M26 58c-4 9.6-9.6 17-15.6 22 8.4-3.2 15.4-9.4 19.6-17.4z"/>
-          <path d="M25 37.5c-5.2 5.4-8.4 12.4-8.4 19.6 4.2-7.2 8.6-12.4 14.6-15.4z"/>
-        </g>
-        <circle cx="46.5" cy="23.5" r="1.6" fill="#0E241A"/>
+        <!-- Pena da cauda azul -->
+        <path d="M26 58c-4 9.6-9.6 17-15.6 22 8.4-3.2 15.4-9.4 19.6-17.4z" fill="#1E5BAA"/>
+        <!-- Pena da cauda verde -->
+        <path d="M25 37.5c-5.2 5.4-8.4 12.4-8.4 19.6 4.2-7.2 8.6-12.4 14.6-15.4z" fill="#2DA84E"/>
+        <!-- Corpo vermelho -->
+        <ellipse cx="34" cy="46" rx="10" ry="14.5" transform="rotate(-10 34 46)" fill="#E23B49"/>
+        <!-- Asa azul -->
+        <path d="M28 38c-4 6-5.5 13-3.5 19 4-6 6.5-12 9.5-15.5z" fill="#1E5BAA"/>
+        <!-- Asa verde -->
+        <path d="M36 40c-2.5 5-3 10.5-1.5 15 2.5-5 5-9 7-11.5z" fill="#2DA84E"/>
+        <!-- Cabeça vermelha -->
+        <circle cx="44" cy="25" r="8.4" fill="#E23B49"/>
+        <!-- Bico amarelo (superior) -->
+        <path d="M50 19.5c5.2 0 8.6 3.2 9.6 7.4-3.2 2.2-7.4 1.8-10.4-1.2z" fill="#F2C744"/>
+        <!-- Bico amarelo (inferior) -->
+        <path d="M51 23c3 .5 5.5 2 7 4.2-2.2 1.5-5 1-7-.5z" fill="#D9A21D"/>
+        <!-- Olho -->
+        <circle cx="46.5" cy="23.5" r="1.8" fill="#0A0A0A"/>
+        <circle cx="46.9" cy="23.1" r=".55" fill="#FFFFFF"/>
       </svg>
 
+      <!-- TUCANO: corpo preto + olhos amarelos + bico amarelo -->
       <svg class="fauna fauna--toucan" viewBox="0 0 80 80">
-        <g fill="#1B4232">
-          <ellipse cx="32" cy="47" rx="10" ry="14.5" transform="rotate(-8 32 47)"/>
-          <circle cx="42" cy="26" r="8.4"/>
-          <path d="M24 58c-3.4 9.6-8.6 17-14.6 22 8.4-3.2 14.6-9.4 18.8-17.4z"/>
-          <path d="M23 37.5c-5.2 5.4-8.4 12.4-8.4 19.6 4.2-7.2 8.6-12.4 14.6-15.4z"/>
-        </g>
-        <path d="M50 22.5c9.4-3 18.6.4 23.4 7.6-7.4 5.4-16.6 5.2-23.6.8z" fill="#E8892B"/>
-        <circle cx="44.5" cy="24.5" r="1.6" fill="#FBF8F1"/>
+        <!-- Penas da cauda (pretas) -->
+        <path d="M24 58c-3.4 9.6-8.6 17-14.6 22 8.4-3.2 14.6-9.4 18.8-17.4z" fill="#0A0A0A"/>
+        <path d="M23 37.5c-5.2 5.4-8.4 12.4-8.4 19.6 4.2-7.2 8.6-12.4 14.6-15.4z" fill="#0A0A0A"/>
+        <!-- Corpo preto -->
+        <ellipse cx="32" cy="47" rx="10" ry="14.5" transform="rotate(-8 32 47)" fill="#0A0A0A"/>
+        <!-- Cabeça preta -->
+        <circle cx="42" cy="26" r="8.4" fill="#0A0A0A"/>
+        <!-- Bico amarelo -->
+        <path d="M50 22.5c9.4-3 18.6.4 23.4 7.6-7.4 5.4-16.6 5.2-23.6.8z" fill="#F2C744"/>
+        <!-- Linha de detalhe do bico -->
+        <path d="M52 26c5-1.5 11-.5 16 3" stroke="#D9A21D" stroke-width=".8" fill="none"/>
+        <!-- Olho amarelo -->
+        <circle cx="44.5" cy="24.5" r="2.8" fill="#F2C744"/>
+        <!-- Pupila preta -->
+        <circle cx="44.5" cy="24.5" r="1.4" fill="#0A0A0A"/>
+        <!-- Brilho -->
+        <circle cx="44.9" cy="24.1" r=".45" fill="#FFFFFF"/>
       </svg>
 
       <svg class="fauna fauna--flock" viewBox="0 0 220 60">
@@ -1931,10 +2005,11 @@ body.is-scrolled .audio-toggle{
 
   <!-- SOBRE -->
   <section class="section section--creme sobre" id="sobre">
-    <div class="container sobre__grid">
+    <div class="container">
 
-      <div class="sobre__fotos reveal">
-        <figure class="photo">
+      <!-- FOTO PRINCIPAL — horizontal, largura total do container -->
+      <div class="sobre__hero-photo reveal">
+        <figure class="photo" data-caption="Vista da Serra da Mantiqueira">
           <img class="photo__img"
                src="img/serra mantiqueira.jpg"
                alt="Vista panorâmica da Serra da Mantiqueira"
@@ -1950,43 +2025,46 @@ body.is-scrolled .audio-toggle{
             <span class="photo__sub">Foto principal</span>
           </div>
         </figure>
+      </div>
 
-        <div class="sobre__fotos-col">
-          <figure class="photo">
+      <!-- LINHA INFERIOR: duas fotos + texto -->
+      <div class="sobre__grid">
+        <div class="sobre__fotos reveal">
+          <figure class="photo" data-caption="Salão de Festas">
             <img class="photo__img" src="img/salao.jpg" alt="Salão de Festas" loading="lazy"
                  onload="this.parentElement.classList.add('photo--loaded')"
                  onerror="this.parentElement.classList.add('photo--error')">
             <div class="photo__inner"><span class="photo__label">Salão de Festas</span></div>
           </figure>
-          <figure class="photo">
+          <figure class="photo" data-caption="Piscina ao pôr do sol">
             <img class="photo__img" src="img/piscina por do sol.png" alt="Piscina do sítio ao pôr do sol" loading="lazy"
                  onload="this.parentElement.classList.add('photo--loaded')"
                  onerror="this.parentElement.classList.add('photo--error')">
             <div class="photo__inner"><span class="photo__label">Piscina ao pôr do sol</span></div>
           </figure>
         </div>
-      </div>
 
-      <div class="reveal" data-delay="1">
-        <p class="eyebrow">Bem-vindo ao Sítio Rio Acima</p>
-        <h2>Mais do que um lugar para eventos, um verdadeiro refúgio</h2>
-        <p>
-          Entre as paisagens privilegiadas de <strong>Guaratinguetá</strong>, cercado pelo verde da natureza
-          e com uma vista encantadora para a majestosa <strong>Serra da Mantiqueira</strong>, o Sítio Rio Acima
-          é um espaço pensado para proporcionar experiências únicas de lazer, descanso e confraternização.
-        </p>
-        <p>
-          Famílias, amigos, empresas e grupos encontram aqui um ambiente acolhedor, seguro e integrado à natureza,
-          com infraestrutura completa para festas, encontros e hospedagem — reunindo conforto, diversão e
-          tranquilidade em um único lugar, longe da correria da cidade.
-        </p>
-        <ul class="sobre__lista">
-          <li>Localizado na Estrada do Mato Seco, 1.850 em Guaratinguetá/SP</li>
-          <li>Preparado para receber grupos de até 50 pessoas com exclusividade</li>
-          <li>Lazer, contato com a natureza e estrutura para eventos</li>
-          <li>Cada detalhe planejado para o seu bem-estar</li>
-        </ul>
-        <a class="btn btn--verde" href="#estrutura">Ver a estrutura completa</a>
+        <div class="reveal" data-delay="1">
+          <p class="eyebrow">Bem-vindo ao Sítio Rio Acima</p>
+          <h2>Mais do que um lugar para eventos, um verdadeiro refúgio</h2>
+          <p>
+            Entre as paisagens privilegiadas de <strong>Guaratinguetá</strong>, cercado pelo verde da natureza
+            e com uma vista encantadora para a majestosa <strong>Serra da Mantiqueira</strong>, o Sítio Rio Acima
+            é um espaço pensado para proporcionar experiências únicas de lazer, descanso e confraternização.
+          </p>
+          <p>
+            Famílias, amigos, empresas e grupos encontram aqui um ambiente acolhedor, seguro e integrado à natureza,
+            com infraestrutura completa para festas, encontros e hospedagem — reunindo conforto, diversão e
+            tranquilidade em um único lugar, longe da correria da cidade.
+          </p>
+          <ul class="sobre__lista">
+            <li>Localizado na Estrada do Mato Seco, 1.850 em Guaratinguetá/SP</li>
+            <li>Preparado para receber grupos de até 50 pessoas com exclusividade</li>
+            <li>Lazer, contato com a natureza e estrutura para eventos</li>
+            <li>Cada detalhe planejado para o seu bem-estar</li>
+          </ul>
+          <a class="btn btn--verde" href="#estrutura">Ver a estrutura completa</a>
+        </div>
       </div>
 
     </div>
@@ -2696,23 +2774,19 @@ body.is-scrolled .audio-toggle{
     '🌿✨ Conheça o Sítio Rio Acima, um verdadeiro refúgio em meio à natureza em Guaratinguetá/SP! ' +
     'Perfeito para eventos, momentos de lazer e hospedagem. Venha se encantar! — ' + SHARE_URL;
 
-  // Caminho relativo (funciona em prod e em localhost) e URL absoluta (og:image já está no HTML)
   const SHARE_IMAGE_PATH = 'img/piscina%20por%20do%20sol.jpg';
   const SHARE_IMAGE_NAME = 'piscina-por-do-sol.jpg';
 
-  // Pré-carrega o arquivo para o Web Share API
   let shareImageFile = null;
   fetch(SHARE_IMAGE_PATH)
     .then(r => { if (!r.ok) throw new Error('img'); return r.blob(); })
     .then(blob => {
       shareImageFile = new File([blob], SHARE_IMAGE_NAME, { type: blob.type || 'image/jpeg' });
     })
-    .catch(() => { /* silencioso: fallback sem imagem */ });
+    .catch(() => {});
 
   async function shareContent(platform) {
-    // 1) WhatsApp
     if (platform === 'whatsapp') {
-      // Mobile com suporte a compartilhar arquivos → envia imagem real + texto + link
       if (shareImageFile && navigator.canShare && navigator.canShare({ files: [shareImageFile] })) {
         try {
           await navigator.share({
@@ -2723,10 +2797,9 @@ body.is-scrolled .audio-toggle{
           });
           return;
         } catch (err) {
-          if (err && err.name === 'AbortError') return; // usuário cancelou
+          if (err && err.name === 'AbortError') return;
         }
       }
-      // Fallback desktop → wa.me com texto (a foto aparece como preview via og:image)
       window.open(
         'https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT),
         '_blank',
@@ -2735,7 +2808,6 @@ body.is-scrolled .audio-toggle{
       return;
     }
 
-    // 2) Facebook — a foto vem do og:image da página
     if (platform === 'facebook') {
       window.open(
         'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SHARE_URL),
@@ -2745,7 +2817,6 @@ body.is-scrolled .audio-toggle{
       return;
     }
 
-    // 3) Instagram — tenta Web Share API (imagem) ou abre o perfil
     if (platform === 'instagram') {
       if (shareImageFile && navigator.canShare && navigator.canShare({ files: [shareImageFile] })) {
         try {
@@ -2779,7 +2850,6 @@ body.is-scrolled .audio-toggle{
     let current = 0;
     let timer = null;
 
-    // Delegação dos botões de compartilhamento
     bannerWrap.querySelectorAll('.banner__share-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -2838,8 +2908,9 @@ body.is-scrolled .audio-toggle{
     start();
   }
 
-  /* LIGHTBOX */
-  const itens = document.querySelectorAll('.galeria__item');
+  /* ==========================================================
+     LIGHTBOX + LUPA UNIVERSAL
+     ========================================================== */
   const lightbox = document.getElementById('lightbox');
   const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxLabel = document.getElementById('lightboxLabel');
@@ -2875,16 +2946,44 @@ body.is-scrolled .audio-toggle{
     if (lastFocused) lastFocused.focus();
   }
 
-  itens.forEach(item => {
-    item.setAttribute('tabindex', '0');
-    item.setAttribute('role', 'button');
-    const caption = item.dataset.caption || 'Foto';
-    const img = item.querySelector('.photo__img');
-    item.addEventListener('click', () => openLightbox(caption, img));
-    item.addEventListener('keydown', (e) => {
+  // Aplica zoom a TODAS as fotos da página (sobre, cards, galeria)
+  const allPhotos = document.querySelectorAll('.photo');
+  allPhotos.forEach(photo => {
+    if (photo.id === 'lightboxPhoto') return; // não trata a própria lightbox
+    const img = photo.querySelector('.photo__img');
+    if (!img) return;
+
+    // Marca como clicável (galeria já tem seu próprio estilo de lupa)
+    if (!photo.classList.contains('galeria__item')) {
+      photo.classList.add('photo--zoomable');
+    }
+
+    // Resolve a legenda:
+    //   1) data-caption   2) <h3> do card   3) .photo__label   4) fallback
+    let caption = photo.dataset.caption;
+    if (!caption) {
+      const card = photo.closest('.card');
+      if (card) {
+        const h3 = card.querySelector('h3');
+        if (h3) caption = h3.textContent.trim();
+      }
+    }
+    if (!caption) {
+      const label = photo.querySelector('.photo__label');
+      if (label) caption = label.textContent.trim();
+    }
+    if (!caption) caption = 'Foto';
+
+    photo.setAttribute('tabindex', '0');
+    photo.setAttribute('role', 'button');
+    photo.setAttribute('aria-label', 'Ampliar foto: ' + caption);
+
+    const open = () => openLightbox(caption, img);
+    photo.addEventListener('click', open);
+    photo.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openLightbox(caption, img);
+        open();
       }
     });
   });
